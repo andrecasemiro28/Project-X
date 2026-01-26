@@ -98,14 +98,22 @@ if not rotas_da_empresa:
 route_input = st.sidebar.selectbox("Flight Route", rotas_da_empresa)
 date_input = st.sidebar.date_input("Scheduled Date", value=date(2025, 12, 1))
 
-# Volume de voos (sugestão baseada na média histórica)
-media_voos_historica = 50
-if route_input != "Sem rotas disponíveis":
-    subset = df_history[(df_history['airline_name'] == airline_input) & (df_history['flight_route'] == route_input)]
+# Estimate number of flights from historical data
+estimated_flights = 50  # fallback default
+estimation_source = "default"
+if route_input != "No routes available":
+    subset = df_history[
+        (df_history['airline_name'] == airline_input) &
+        (df_history['flight_route'] == route_input)
+    ].sort_values('reporting_period', ascending=False)
     if not subset.empty:
-        media_voos_historica = int(subset['total_flights'].mean())
+        # Use last known value as best estimate (most recent month)
+        estimated_flights = int(subset.iloc[0]['total_flights'])
+        estimation_source = "historical"
 
-flights_input = st.sidebar.number_input("Number of Flights", min_value=1, value=media_voos_historica)
+st.sidebar.markdown("---")
+st.sidebar.caption(f"📊 **Estimated Flights:** {estimated_flights} *(based on {estimation_source} data)*")
+flights_input = estimated_flights  # Use estimated value directly
 
 # ============================================
 # 4. PREPARAÇÃO DE DADOS (ENGINEERING)
