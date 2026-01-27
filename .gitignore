@@ -1,2 +1,3 @@
 /venv
 seasonal_route_stats.pkl
+/secrets.toml

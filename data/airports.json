@@ -1,0 +1,22 @@
+[
+  {"city_name": "São Paulo", "airport_code": "GRU", "airport_name": "Guarulhos International Airport"},
+  {"city_name": "São Paulo", "airport_code": "CGH", "airport_name": "Congonhas Airport"},
+  {"city_name": "São Paulo", "airport_code": "VCP", "airport_name": "Viracopos International Airport"},
+  {"city_name": "Rio de Janeiro", "airport_code": "GIG", "airport_name": "Galeão International Airport"},
+  {"city_name": "Rio de Janeiro", "airport_code": "SDU", "airport_name": "Santos Dumont Airport"},
+  {"city_name": "Belo Horizonte", "airport_code": "CNF", "airport_name": "Confins International Airport"},
+  {"city_name": "Belo Horizonte", "airport_code": "PLU", "airport_name": "Pampulha Airport"},
+  {"city_name": "Brasília", "airport_code": "BSB", "airport_name": "Presidente Juscelino Kubitschek International Airport"},
+  {"city_name": "Salvador", "airport_code": "SSA", "airport_name": "Deputado Luís Eduardo Magalhães International Airport"},
+  {"city_name": "Recife", "airport_code": "REC", "airport_name": "Guararapes International Airport"},
+  {"city_name": "Fortaleza", "airport_code": "FOR", "airport_name": "Pinto Martins International Airport"},
+  {"city_name": "Curitiba", "airport_code": "CWB", "airport_name": "Afonso Pena International Airport"},
+  {"city_name": "Porto Alegre", "airport_code": "POA", "airport_name": "Salgado Filho International Airport"},
+  {"city_name": "Manaus", "airport_code": "MAO", "airport_name": "Eduardo Gomes International Airport"},
+  {"city_name": "Belém", "airport_code": "BEL", "airport_name": "Val de Cans International Airport"},
+  {"city_name": "Florianópolis", "airport_code": "FLN", "airport_name": "Hercílio Luz International Airport"},
+  {"city_name": "Goiânia", "airport_code": "GYN", "airport_name": "Santa Genoveva Airport"},
+  {"city_name": "Vitória", "airport_code": "VIX", "airport_name": "Eurico de Aguiar Salles Airport"},
+  {"city_name": "Natal", "airport_code": "NAT", "airport_name": "São Gonçalo do Amarante International Airport"},
+  {"city_name": "Maceió", "airport_code": "MCZ", "airport_name": "Zumbi dos Palmares International Airport"}
+]
