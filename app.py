@@ -1,244 +1,269 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from catboost import CatBoostClassifier
 import pickle
-from datetime import date
-import os
+from catboost import CatBoostRegressor
+import plotly.graph_objects as go
+from datetime import datetime
+import google.generativeai as genai
 
 # ============================================
-# 1. CONFIGURAÇÃO DA PÁGINA
+# 1. CONFIGURATION & STYLES
 # ============================================
-st.set_page_config(
-    page_title="Flight Risk AI",
-    page_icon="✈️",
-    layout="wide"
-)
+st.set_page_config(page_title="Flight Risk AI", page_icon="✈️", layout="wide")
 
-# CSS styling for cards and buttons
 st.markdown("""
     <style>
-    .metric-card {
-        background-color: #f0f2f6;
-        border-radius: 10px;
-        padding: 20px;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    .stButton>button {
-        width: 100%;
-        height: 3em;
-        font-weight: bold;
-    }
+    .stMetric { background-color: #f8f9fa; border: 1px solid #dee2e6; border-radius: 5px; }
+    .stButton>button { width: 100%; font-weight: bold; border-radius: 5px; }
     </style>
     """, unsafe_allow_html=True)
 
 # ============================================
-# 2. CARREGAMENTO DOS ARQUIVOS (CACHE)
+# 2. LOAD DATA
 # ============================================
 @st.cache_resource
-def load_resources():
-    """Load the model and feature list from the local folder."""
-
-    # Verifica existência dos arquivos
-    if not os.path.exists('modelo_atrasos_v1.cbm'):
-        return None, None
-
-    # Carregar Modelo CatBoost
-    model = CatBoostClassifier()
-    model.load_model('modelo_atrasos_v1.cbm')
-
-    # Carregar Lista de Colunas (Features)
-    with open('features_list.pkl', 'rb') as f:
-        feature_cols = pickle.load(f)
-
-    return model, feature_cols
+def load_artifacts():
+    try:
+        with open('app_context.pkl', 'rb') as f:
+            ctx = pickle.load(f)
+        
+        model_delay = CatBoostRegressor()
+        model_delay.load_model('model_delay.cbm')
+        
+        model_cancel = CatBoostRegressor()
+        model_cancel.load_model('model_cancel.cbm')
+        
+        return model_delay, model_cancel, ctx
+    except FileNotFoundError:
+        return None, None, None
 
 @st.cache_data
-def load_data():
-    """Load historical data for lag calculations."""
-    if not os.path.exists('historico_voos.csv'):
-        return None
+def load_history():
+    try:
+        df = pd.read_pickle("seasonal_route_stats.pkl")
+        # Ensure correct types for filtering
+        df['airline_name'] = df['airline_name'].astype(str)
+        df['flight_route'] = df['flight_route'].astype(str)
+        return df
+    except FileNotFoundError:
+        return pd.DataFrame()
 
-    df = pd.read_csv('historico_voos.csv')
-    df['reporting_period'] = pd.to_datetime(df['reporting_period'])
-    return df
+model_delay, model_cancel, ctx = load_artifacts()
+df_stats = load_history()
 
-# Executa carregamento
-model, feature_cols = load_resources()
-df_history = load_data()
-
-# Tratamento de erro se arquivos não existirem
-if model is None or df_history is None:
-    st.error("""
-    ❌ **Files not found!**
-
-    Make sure the following files are present in the same folder as 'app.py':
-    1. `modelo_atrasos_v1.cbm`
-    2. `features_list.pkl`
-    3. `historico_voos.csv`
-    """)
+if not ctx or df_stats.empty:
+    st.error("❌ Error: Files missing or empty. Please check your .pkl and .cbm files.")
     st.stop()
 
 # ============================================
-# 3. BARRA LATERAL (INPUTS)
+# 3. HELPER: ESTIMATION LOGIC
 # ============================================
-st.sidebar.header("🛠️ Flight Setup")
-st.sidebar.info("Set the parameters for the simulation.")
+def get_operational_estimates(airline, route, month):
+    """
+    Estimates operational inputs based on HISTORICAL averages.
+    Ignores empty future rows (2026) by dropping NaNs.
+    """
+    SAFE_VOL = 1.0
+    SAFE_RISK = 0.5
+    
+    # Filter for this specific airline and route
+    route_data = df_stats[
+        (df_stats['airline_name'] == airline) & 
+        (df_stats['flight_route'] == route)
+    ]
+    
+    if route_data.empty:
+        return SAFE_VOL, SAFE_RISK, "No history for this route."
 
-# Inputs
-empresas = sorted(df_history['airline_name'].unique())
-airline_input = st.sidebar.selectbox("Airline", empresas)
+    # Try 1: Specific Month Average (e.g., Average of May 2023, May 2024)
+    month_data = route_data[route_data['month'] == month]
+    
+    # CRITICAL: Drop rows where data is missing (future flights)
+    valid_month_data = month_data.dropna(subset=['avg_vol_vs_avg', 'avg_severity'])
+    
+    if not valid_month_data.empty:
+        est_vol = valid_month_data['avg_vol_vs_avg'].mean()
+        est_risk = valid_month_data['avg_severity'].mean()
+        month_name = datetime(2000, month, 1).strftime('%B')
+        return est_vol, est_risk, f"Based on historical {month_name} averages."
 
-# Filtro dinâmico de rotas
-rotas_da_empresa = sorted(df_history[df_history['airline_name'] == airline_input]['flight_route'].unique())
-if not rotas_da_empresa:
-    rotas_da_empresa = ["No routes available"]
+    # Try 2: Annual Average (Fallback if no history for that specific month)
+    # Uses all valid data for this route across all months
+    valid_route_data = route_data.dropna(subset=['avg_vol_vs_avg', 'avg_severity'])
+    
+    if not valid_route_data.empty:
+        est_vol = valid_route_data['avg_vol_vs_avg'].mean()
+        est_risk = valid_route_data['avg_severity'].mean()
+        return est_vol, est_risk, "No May data; estimated from annual route average."
 
-route_input = st.sidebar.selectbox("Flight Route", rotas_da_empresa)
-date_input = st.sidebar.date_input("Scheduled Date", value=date(2025, 12, 1))
+    return SAFE_VOL, SAFE_RISK, "New Route (Using Standard Defaults)"
 
-# Estimate number of flights from historical data
-estimated_flights = 50  # fallback default
-estimation_source = "default"
-if route_input != "No routes available":
-    subset = df_history[
-        (df_history['airline_name'] == airline_input) &
-        (df_history['flight_route'] == route_input)
-    ].sort_values('reporting_period', ascending=False)
-    if not subset.empty:
-        # Use last known value as best estimate (most recent month)
-        estimated_flights = int(subset.iloc[0]['total_flights'])
-        estimation_source = "historical"
+# ============================================
+# 4. SIDEBAR - DYNAMIC INPUTS
+# ============================================
+st.sidebar.header("✈️ Flight Parameters")
+
+# --- SECRETS HANDLING ---
+try:
+    api_key = st.secrets["GEMINI_API_KEY"]
+except (FileNotFoundError, KeyError):
+    # Fallback for local testing without secrets.toml
+    api_key = st.sidebar.text_input("Gemini API Key", type="password")
+
+# --- 1. AIRLINE SELECTION ---
+# Get unique airlines from the stats file to ensure they have data
+available_airlines = sorted(df_stats['airline_name'].unique())
+airline = st.sidebar.selectbox("Airline", available_airlines)
+
+# --- 2. ROUTE SELECTION (FILTERED) ---
+# Filter routes to show ONLY those flown by the selected airline
+available_routes = sorted(df_stats[df_stats['airline_name'] == airline]['flight_route'].unique())
+route = st.sidebar.selectbox("Route", available_routes)
+
+# --- 3. DATE SELECTION ---
+travel_date = st.sidebar.date_input("Travel Date", value=datetime.now())
+month = travel_date.month
+
+# --- 4. AUTO-ESTIMATION ---
+est_vol, est_risk, context_msg = get_operational_estimates(airline, route, month)
 
 st.sidebar.markdown("---")
-st.sidebar.caption(f"📊 **Estimated Flights:** {estimated_flights} *(based on {estimation_source} data)*")
-flights_input = estimated_flights  # Use estimated value directly
+st.sidebar.subheader("📡 Operational Estimation")
+st.sidebar.caption(f"ℹ️ {context_msg}")
+
+with st.sidebar.expander("⚙️ Adjust Estimates", expanded=True):
+    vol_val = st.slider("Congestion Est.", 0.5, 2.0, float(est_vol), format="%.2f")
+    recent_perf = st.slider("Momentum Est.", 0.0, 5.0, float(est_risk), format="%.2f")
 
 # ============================================
-# 4. PREPARAÇÃO DE DADOS (ENGINEERING)
+# 5. PREDICTION ENGINE
 # ============================================
-def prepare_input_data(airline, route, date_val, flights, history_df, feature_list):
-    """Reconstrói as features (Lags, Sazonalidade) usando o histórico."""
-
-    # 1. Busca histórico recente
-    history_subset = history_df[
-        (history_df['airline_name'] == airline) &
-        (history_df['flight_route'] == route)
-    ].sort_values('reporting_period', ascending=False)
-
-    # 2. Base do input
-    input_data = {
-        'airline_name': airline,
-        'flight_route': route,
-        'total_flights': flights,
-        'origin_destination_country': history_subset.iloc[0]['origin_destination_country'] if not history_subset.empty else "Unknown"
-    }
-
-    # 3. Features Temporais
-    month = date_val.month
-    input_data['feat_month_sin'] = np.sin(2 * np.pi * month / 12)
-    input_data['feat_month_cos'] = np.cos(2 * np.pi * month / 12)
-    input_data['feat_traffic_log'] = np.log1p(flights)
-
-    # 4. Features de LAG
-    if not history_subset.empty:
-        last_record = history_subset.iloc[0]
-        # Risco do último mês conhecido
-        last_risk = (last_record['number_flights_delayed'] + last_record['number_flights_cancelled']) / last_record['total_flights']
-
-        input_data['feat_lag_1m'] = last_risk
-        input_data['feat_roll_3m'] = last_risk
-        input_data['feat_roll_std_3m'] = 0.05
-        input_data['feat_lag_12m'] = last_risk
-        input_data['feat_airline_global_risk_lag1'] = last_record.get('feat_airline_global_risk_lag1', 0.1)
-        input_data['feat_route_global_risk_lag1'] = last_record.get('feat_route_global_risk_lag1', 0.1)
-    else:
-        # Cold Start
-        for col in ['feat_lag_1m', 'feat_roll_3m', 'feat_roll_std_3m', 'feat_lag_12m',
-                    'feat_airline_global_risk_lag1', 'feat_route_global_risk_lag1']:
-            input_data[col] = -1
-
+def make_prediction():
+    # 1. Defaults
+    input_data = ctx['defaults'].copy()
+    
+    # 2. Inject User Inputs
+    input_data['airline_name'] = airline
+    input_data['flight_route'] = route
+    input_data['route_month_id'] = f"{route}_{month}"
+    
+    # Time Features
+    input_data['month_sin'] = np.sin(2 * np.pi * month / 12)
+    input_data['month_cos'] = np.cos(2 * np.pi * month / 12)
+    input_data['is_winter_holiday'] = 1 if month in [12, 1] else 0
+    input_data['is_summer_holiday'] = 1 if month in [7, 8] else 0
+    
+    # Operational Estimates
+    input_data['vol_vs_avg'] = vol_val
+    input_data['severity_score_lag_1'] = recent_perf
+    input_data['severity_score_roll_mean_3m'] = recent_perf 
+    
+    # 3. Create DataFrame
     df_input = pd.DataFrame([input_data])
+    
+    # --- CRITICAL FIX: Ensure EXACT Column Match ---
+    # Loop through the columns the model expects (from your context file)
+    expected_cols = ctx['feature_columns']
+    
+    for col in expected_cols:
+        if col not in df_input.columns:
+            # If a column is missing, fill it with 0 to prevent crash
+            df_input[col] = 0 
+            
+    # Reorder columns to match training order strictly
+    df_input = df_input[expected_cols]
+    # -----------------------------------------------
 
-    # Retorna apenas as colunas esperadas pelo modelo
-    return df_input[feature_list]
+    # 4. Predict
+    delay_log = model_delay.predict(df_input)[0]
+    cancel_log = model_cancel.predict(df_input)[0]
+    
+    return max(0, np.expm1(delay_log)), max(0, np.expm1(cancel_log))
 
 # ============================================
-# 5. EXECUÇÃO E EXIBIÇÃO
+# 6. MAIN DASHBOARD
 # ============================================
-st.title("✈️ Flight Risk Predictor")
-st.markdown(f"**Analysis for:** {airline_input} | **Rote:** {route_input}")
+st.title("🛫 Flight Risk AI")
 
-# Contexto Histórico
-with st.expander("📊 View Recent History", expanded=True):
-    if route_input != "No routes available":
-        hist_rec = df_history[
-            (df_history['airline_name'] == airline_input) &
-            (df_history['flight_route'] == route_input)
-        ].sort_values('reporting_period', ascending=False).head(1)
+# Session State for Persistence
+if "prediction" not in st.session_state:
+    st.session_state.prediction = None
+if "chat_history" not in st.session_state:
+    st.session_state.chat_history = []
 
-        if not hist_rec.empty:
-            last_delay = (hist_rec.iloc[0]['number_flights_delayed'] / hist_rec.iloc[0]['total_flights'])
-            c1, c2, c3 = st.columns(3)
-            c1.metric("Last Delay Rate", f"{last_delay:.1%}")
-            c2.metric("Last Date", hist_rec.iloc[0]['reporting_period'].strftime('%Y-%m'))
-            c3.metric("Total Flights", int(hist_rec.iloc[0]['total_flights']))
+if st.button("CALCULATE RISK", type="primary"):
+    sev, canc_rate = make_prediction()
+    
+    # Logic for labels
+    if sev < 0.5: lbl, col = "LOW RISK", "green"
+    elif sev < 2.0: lbl, col = "MEDIUM RISK", "orange"
+    else: lbl, col = "HIGH RISK", "red"
+    
+    st.session_state.prediction = {
+        "severity": sev, "cancel_rate": canc_rate,
+        "label": lbl, "color": col,
+        "airline": airline, "route": route, "date": str(travel_date)
+    }
+    st.session_state.chat_history = [] # Reset chat on new prediction
+
+# Display Results
+if st.session_state.prediction:
+    res = st.session_state.prediction
+    
+    st.divider()
+    c1, c2 = st.columns([1, 1])
+    
+    with c1:
+        st.subheader("Delay Intensity")
+        st.markdown(f"<h2 style='color:{res['color']}'>{res['label']} ({res['severity']:.2f})</h2>", unsafe_allow_html=True)
+        fig = go.Figure(go.Indicator(
+            mode = "gauge+number", value = min(res['severity'], 5.0),
+            gauge = {'axis': {'range': [0, 5]}, 'bar': {'color': res['color']}}
+        ))
+        fig.update_layout(height=200, margin=dict(t=0,b=0,l=20,r=20))
+        st.plotly_chart(fig, use_container_width=True)
+        
+    with c2:
+        st.subheader("Cancellation Chance")
+        pct = res['cancel_rate'] * 100
+        st.metric("Probability", f"{pct:.1f}%")
+        st.progress(min(pct/5, 1.0))
+        st.caption(f"Estimated using congestion: {vol_val:.2f}")
+
+    # ============================================
+    # 7. AI ASSISTANT
+    # ============================================
+    st.divider()
+    st.subheader("🤖 Travel Assistant")
+    
+    for msg in st.session_state.chat_history:
+        st.chat_message(msg["role"]).write(msg["content"])
+        
+    if prompt := st.chat_input("Ask about backup plans..."):
+        if not api_key:
+            st.error("⚠️ Please provide a Gemini API Key.")
         else:
-            st.warning("No historical data for this route.")
-
-st.divider()
-
-# Calculate button
-col_btn, col_empty = st.columns([1, 2])
-with col_btn:
-    calcular = st.button("CALCULATE RISK", type="primary")
-
-if calcular:
-    if route_input == "No routes available":
-        st.error("Invalid configuration.")
-    else:
-        with st.spinner('Processing model...'):
-            # 1. Prepara dados
-            X_pred = prepare_input_data(airline_input, route_input, date_input, flights_input, df_history, feature_cols)
-
-            # 2. Predição
-            probs = model.predict_proba(X_pred)[0]
-
-            # Obter a classe predita (CatBoost retorna array, extrair o valor escalar)
-            pred_class = int(model.predict(X_pred).flatten()[0])
-
-            # 3. Exibição
-            st.subheader("Prediction Result")
-
-            labels = {0: "LOW RISK", 1: "MEDIUM RISK", 2: "HIGH RISK"}
-            colors = {0: "#28a745", 1: "#ffc107", 2: "#dc3545"}
-            descricoes = {
-                0: "Operation expected to be within normal parameters.",
-                1: "Attention: Considerable chance of partial delays.",
-                2: "CRITICAL ALERT: High probability of severe delays."
-            }
-
-            cols = st.columns([1, 1.5])
-
-            with cols[0]:
-                st.markdown(f"""
-                <div style="background-color: {colors[pred_class]}; padding: 30px; border-radius: 15px; color: white; text-align: center; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
-                    <h1 style="margin:0; font-size: 2.5em;">{labels[pred_class]}</h1>
-                    <p style="margin-top:10px; font-size: 1.1em;">Predicted Status</p>
-                </div>
-                """, unsafe_allow_html=True)
-
-            with cols[1]:
-                st.write("**Detailed Probabilities:**")
-                st.write(f"🟢 Low: {probs[0]:.1%}")
-                st.progress(float(probs[0]))
-                st.write(f"🟡 Medium: {probs[1]:.1%}")
-                st.progress(float(probs[1]))
-                st.write(f"🔴 High: {probs[2]:.1%}")
-                st.progress(float(probs[2]))
-
-            st.info(f"💡 **Interpretation:** {descricoes[pred_class]}")
-
-else:
-    st.markdown("👈 *Configure the parameters and click Calculate.*")
+            st.session_state.chat_history.append({"role": "user", "content": prompt})
+            st.chat_message("user").write(prompt)
+            
+            context = f"""
+            Role: Expert Travel Agent.
+            Flight: {res['airline']} {res['route']} on {res['date']}.
+            Risk Assessment:
+            - Delay Severity: {res['severity']:.2f}/5.0 (High if > 2.0)
+            - Cancellation Probability: {res['cancel_rate']*100:.1f}%
+            User Question: "{prompt}"
+            Provide actionable advice.
+            """
+            
+            try:
+                genai.configure(api_key=api_key)
+                model = genai.GenerativeModel("gemini-1.5-flash-002")
+                response = model.generate_content(context)
+                bot_reply = response.text
+                
+                st.session_state.chat_history.append({"role": "assistant", "content": bot_reply})
+                st.chat_message("assistant").write(bot_reply)
+            except Exception as e:
+                st.error(f"AI Error: {e}")
