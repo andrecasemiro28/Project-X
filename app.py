@@ -93,8 +93,6 @@ except (FileNotFoundError, KeyError):
         with open('secrets.toml', 'r') as f:
             secrets = toml.load(f)
         api_key = secrets['GEMINI_API_KEY']
-        if api_key:
-            st.success("✅ Gemini API Key loaded successfully!")
     except (FileNotFoundError, KeyError, Exception):
         api_key = None
         st.warning("⚠️ Gemini API Key not found in secrets.toml. AI Assistant will be disabled.")
@@ -138,38 +136,6 @@ if not ctx or df_stats.empty:
 # ============================================
 # 4. HELPER FUNCTIONS
 # ============================================
-def get_operational_estimates(airline, route, month):
-    """Estimates operational inputs based on HISTORICAL averages."""
-    SAFE_VOL = 1.0
-    SAFE_RISK = 0.5
-
-    route_data = df_stats[
-        (df_stats['airline_name'] == airline) &
-        (df_stats['flight_route'] == route)
-    ]
-
-    if route_data.empty:
-        return SAFE_VOL, SAFE_RISK, "No history for this route."
-
-    month_data = route_data[route_data['month'] == month]
-    valid_month_data = month_data.dropna(subset=['avg_vol_vs_avg', 'avg_severity'])
-
-    if not valid_month_data.empty:
-        est_vol = valid_month_data['avg_vol_vs_avg'].mean()
-        est_risk = valid_month_data['avg_severity'].mean()
-        month_name = datetime(2000, month, 1).strftime('%B')
-        return est_vol, est_risk, f"Based on historical {month_name} averages."
-
-    valid_route_data = route_data.dropna(subset=['avg_vol_vs_avg', 'avg_severity'])
-
-    if not valid_route_data.empty:
-        est_vol = valid_route_data['avg_vol_vs_avg'].mean()
-        est_risk = valid_route_data['avg_severity'].mean()
-        return est_vol, est_risk, "Estimated from annual route average."
-
-    return SAFE_VOL, SAFE_RISK, "New Route (Using Standard Defaults)"
-
-
 def make_prediction(airline, route, month, vol_val, recent_perf):
     """Generate prediction for a specific flight."""
     input_data = ctx['defaults'].copy()
@@ -303,9 +269,10 @@ def get_ai_recommendation(flights, travel_purpose, has_commitment, commitment_ti
     {flights_summary}
 
     Please provide:
-    1. Your TOP RECOMMENDATION with reasoning (considering their commitment and travel purpose)
-    2. A BACKUP OPTION in case of issues
-    3. Any specific advice based on their travel purpose and commitment status
+    1. BEST PRACTICES - Key recommendations for booking flights (timing, what to check, cancellation policies, etc.)
+    2. Your TOP RECOMMENDATION with reasoning (considering their commitment and travel purpose)
+    3. A BACKUP OPTION in case of issues
+    4. Any specific advice based on their travel purpose and commitment status
 
     Keep your response brief and focused on actionable advice.
     """
@@ -421,18 +388,9 @@ if has_commitment:
     ]
     commitment_priority = st.sidebar.selectbox("Commitment Priority", priority_options)
 
-# --- OPERATIONAL ESTIMATES ---
-st.sidebar.markdown("---")
-st.sidebar.subheader("📡 Operational Estimates")
-
-# Generate route for estimation
-route_for_estimate = f"{origin_code}-{dest_code}"
-est_vol, est_risk, context_msg = get_operational_estimates(airline, route_for_estimate, month)
-st.sidebar.caption(f"ℹ️ {context_msg}")
-
-with st.sidebar.expander("⚙️ Adjust Estimates", expanded=False):
-    vol_val = st.slider("Congestion Level", 0.5, 2.0, float(est_vol), format="%.2f")
-    recent_perf = st.slider("Recent Performance", 0.0, 5.0, float(est_risk), format="%.2f")
+# Use defaults from model context for operational estimates
+vol_val = float(ctx['defaults'].get('vol_vs_avg', 1.0))
+recent_perf = float(ctx['defaults'].get('severity_score_lag_1', 0.5))
 
 # ============================================
 # 6. MAIN DASHBOARD
@@ -589,7 +547,31 @@ if st.session_state.flights:
             fig.update_layout(height=200, margin=dict(t=50, b=0, l=20, r=20))
             st.plotly_chart(fig, use_container_width=True)
 
-            st.metric("Cancellation Probability", f"{flight['cancel_rate']*100:.1f}%")
+            # Cancellation Probability Gauge
+            cancel_pct = flight['cancel_rate'] * 100
+            if cancel_pct < 10:
+                cancel_color = "green"
+            elif cancel_pct < 30:
+                cancel_color = "orange"
+            else:
+                cancel_color = "red"
+
+            fig_cancel = go.Figure(go.Indicator(
+                mode="gauge+number",
+                value=min(cancel_pct, 100),
+                title={'text': "Cancellation Probability (%)"},
+                gauge={
+                    'axis': {'range': [0, 100]},
+                    'bar': {'color': cancel_color},
+                    'steps': [
+                        {'range': [0, 10], 'color': "lightgreen"},
+                        {'range': [10, 30], 'color': "lightyellow"},
+                        {'range': [30, 100], 'color': "lightcoral"}
+                    ]
+                }
+            ))
+            fig_cancel.update_layout(height=200, margin=dict(t=50, b=0, l=20, r=20))
+            st.plotly_chart(fig_cancel, use_container_width=True)
 
     # ============================================
     # 7. AI TRAVEL ASSISTANT CHAT (Task 6)
