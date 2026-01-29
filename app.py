@@ -399,6 +399,8 @@ def get_solution_prompt(persona_key, risk_data, quote_price, user_question, opp_
       - Suggest cautious optimizations (earlier arrival to airport, checking same-airline alternatives), but avoid expensive changes.
     - If Flight Risk is HIGH (>= 60%) OR Financial Pain >= $500:
       - You may recommend your default strategy: "{p_data['flight_strategy']}" (e.g., double-booking) and explain why it’s justified.
+    - If the persona is "The Executive" and the delay probability is at least 40%:
+      - Treat this as high enough risk to justify recommending "{p_data['flight_strategy']}" as a strong option, while still acknowledging cost trade-offs.
 
     Always reference the ${opp_cost:.0f} cost explicitly to justify whether a move is worth it or not.
 
