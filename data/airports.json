@@ -1,22 +1,1957 @@
 [
-  {"city_name": "São Paulo", "airport_code": "GRU", "airport_name": "Guarulhos International Airport"},
-  {"city_name": "São Paulo", "airport_code": "CGH", "airport_name": "Congonhas Airport"},
-  {"city_name": "São Paulo", "airport_code": "VCP", "airport_name": "Viracopos International Airport"},
-  {"city_name": "Rio de Janeiro", "airport_code": "GIG", "airport_name": "Galeão International Airport"},
-  {"city_name": "Rio de Janeiro", "airport_code": "SDU", "airport_name": "Santos Dumont Airport"},
-  {"city_name": "Belo Horizonte", "airport_code": "CNF", "airport_name": "Confins International Airport"},
-  {"city_name": "Belo Horizonte", "airport_code": "PLU", "airport_name": "Pampulha Airport"},
-  {"city_name": "Brasília", "airport_code": "BSB", "airport_name": "Presidente Juscelino Kubitschek International Airport"},
-  {"city_name": "Salvador", "airport_code": "SSA", "airport_name": "Deputado Luís Eduardo Magalhães International Airport"},
-  {"city_name": "Recife", "airport_code": "REC", "airport_name": "Guararapes International Airport"},
-  {"city_name": "Fortaleza", "airport_code": "FOR", "airport_name": "Pinto Martins International Airport"},
-  {"city_name": "Curitiba", "airport_code": "CWB", "airport_name": "Afonso Pena International Airport"},
-  {"city_name": "Porto Alegre", "airport_code": "POA", "airport_name": "Salgado Filho International Airport"},
-  {"city_name": "Manaus", "airport_code": "MAO", "airport_name": "Eduardo Gomes International Airport"},
-  {"city_name": "Belém", "airport_code": "BEL", "airport_name": "Val de Cans International Airport"},
-  {"city_name": "Florianópolis", "airport_code": "FLN", "airport_name": "Hercílio Luz International Airport"},
-  {"city_name": "Goiânia", "airport_code": "GYN", "airport_name": "Santa Genoveva Airport"},
-  {"city_name": "Vitória", "airport_code": "VIX", "airport_name": "Eurico de Aguiar Salles Airport"},
-  {"city_name": "Natal", "airport_code": "NAT", "airport_name": "São Gonçalo do Amarante International Airport"},
-  {"city_name": "Maceió", "airport_code": "MCZ", "airport_name": "Zumbi dos Palmares International Airport"}
+  {
+    "city_name": "Aberdeen, SD",
+    "airport_code": "ABR",
+    "airport_name": "Aberdeen, SD Airport"
+  },
+  {
+    "city_name": "Abilene, TX",
+    "airport_code": "ABI",
+    "airport_name": "Abilene, TX Airport"
+  },
+  {
+    "city_name": "Adak Island, AK",
+    "airport_code": "ADK",
+    "airport_name": "Adak Island, AK Airport"
+  },
+  {
+    "city_name": "Aguadilla, PR",
+    "airport_code": "BQN",
+    "airport_name": "Aguadilla, PR Airport"
+  },
+  {
+    "city_name": "Akron, OH",
+    "airport_code": "CAK",
+    "airport_name": "Akron, OH Airport"
+  },
+  {
+    "city_name": "Alamosa, CO",
+    "airport_code": "ALS",
+    "airport_name": "Alamosa, CO Airport"
+  },
+  {
+    "city_name": "Albany, GA",
+    "airport_code": "ABY",
+    "airport_name": "Albany, GA Airport"
+  },
+  {
+    "city_name": "Albany, NY",
+    "airport_code": "ALB",
+    "airport_name": "Albany International Airport"
+  },
+  {
+    "city_name": "Albuquerque, NM",
+    "airport_code": "ABQ",
+    "airport_name": "Albuquerque International Sunport"
+  },
+  {
+    "city_name": "Alexandria, LA",
+    "airport_code": "AEX",
+    "airport_name": "Alexandria, LA Airport"
+  },
+  {
+    "city_name": "Allentown/Bethlehem/Easton, PA",
+    "airport_code": "ABE",
+    "airport_name": "Allentown/Bethlehem/Easton, PA Airport"
+  },
+  {
+    "city_name": "Alpena, MI",
+    "airport_code": "APN",
+    "airport_name": "Alpena, MI Airport"
+  },
+  {
+    "city_name": "Amarillo, TX",
+    "airport_code": "AMA",
+    "airport_name": "Amarillo, TX Airport"
+  },
+  {
+    "city_name": "Anchorage, AK",
+    "airport_code": "ANC",
+    "airport_name": "Ted Stevens Anchorage International Airport"
+  },
+  {
+    "city_name": "Appleton, WI",
+    "airport_code": "ATW",
+    "airport_name": "Appleton, WI Airport"
+  },
+  {
+    "city_name": "Arcata/Eureka, CA",
+    "airport_code": "ACV",
+    "airport_name": "Arcata/Eureka, CA Airport"
+  },
+  {
+    "city_name": "Asheville, NC",
+    "airport_code": "AVL",
+    "airport_name": "Asheville, NC Airport"
+  },
+  {
+    "city_name": "Ashland, WV",
+    "airport_code": "HTS",
+    "airport_name": "Ashland, WV Airport"
+  },
+  {
+    "city_name": "Aspen, CO",
+    "airport_code": "ASE",
+    "airport_name": "Aspen, CO Airport"
+  },
+  {
+    "city_name": "Atlanta, GA",
+    "airport_code": "ATL",
+    "airport_name": "Hartsfield-Jackson Atlanta International Airport"
+  },
+  {
+    "city_name": "Atlantic City, NJ",
+    "airport_code": "ACY",
+    "airport_name": "Atlantic City, NJ Airport"
+  },
+  {
+    "city_name": "Augusta, GA",
+    "airport_code": "AGS",
+    "airport_name": "Augusta, GA Airport"
+  },
+  {
+    "city_name": "Austin, TX",
+    "airport_code": "AUS",
+    "airport_name": "Austin-Bergstrom International Airport"
+  },
+  {
+    "city_name": "Bakersfield, CA",
+    "airport_code": "BFL",
+    "airport_name": "Bakersfield, CA Airport"
+  },
+  {
+    "city_name": "Baltimore, MD",
+    "airport_code": "BWI",
+    "airport_name": "Baltimore/Washington International Airport"
+  },
+  {
+    "city_name": "Bangor, ME",
+    "airport_code": "BGR",
+    "airport_name": "Bangor, ME Airport"
+  },
+  {
+    "city_name": "Barrow, AK",
+    "airport_code": "BRW",
+    "airport_name": "Barrow, AK Airport"
+  },
+  {
+    "city_name": "Baton Rouge, LA",
+    "airport_code": "BTR",
+    "airport_name": "Baton Rouge, LA Airport"
+  },
+  {
+    "city_name": "Beaumont/Port Arthur, TX",
+    "airport_code": "BPT",
+    "airport_name": "Beaumont/Port Arthur, TX Airport"
+  },
+  {
+    "city_name": "Belleville, IL",
+    "airport_code": "BLV",
+    "airport_name": "Belleville, IL Airport"
+  },
+  {
+    "city_name": "Bellingham, WA",
+    "airport_code": "BLI",
+    "airport_name": "Bellingham, WA Airport"
+  },
+  {
+    "city_name": "Bemidji, MN",
+    "airport_code": "BJI",
+    "airport_name": "Bemidji, MN Airport"
+  },
+  {
+    "city_name": "Bend/Redmond, OR",
+    "airport_code": "RDM",
+    "airport_name": "Bend/Redmond, OR Airport"
+  },
+  {
+    "city_name": "Bethel, AK",
+    "airport_code": "BET",
+    "airport_name": "Bethel, AK Airport"
+  },
+  {
+    "city_name": "Billings, MT",
+    "airport_code": "BIL",
+    "airport_name": "Billings, MT Airport"
+  },
+  {
+    "city_name": "Binghamton, NY",
+    "airport_code": "BGM",
+    "airport_name": "Binghamton, NY Airport"
+  },
+  {
+    "city_name": "Birmingham, AL",
+    "airport_code": "BHM",
+    "airport_name": "Birmingham, AL Airport"
+  },
+  {
+    "city_name": "Bishop, CA",
+    "airport_code": "BIH",
+    "airport_name": "Bishop, CA Airport"
+  },
+  {
+    "city_name": "Bismarck/Mandan, ND",
+    "airport_code": "BIS",
+    "airport_name": "Bismarck/Mandan, ND Airport"
+  },
+  {
+    "city_name": "Bloomington/Normal, IL",
+    "airport_code": "BMI",
+    "airport_name": "Bloomington/Normal, IL Airport"
+  },
+  {
+    "city_name": "Boise, ID",
+    "airport_code": "BOI",
+    "airport_name": "Boise Airport"
+  },
+  {
+    "city_name": "Boston, MA",
+    "airport_code": "BOS",
+    "airport_name": "Boston Logan International Airport"
+  },
+  {
+    "city_name": "Bozeman, MT",
+    "airport_code": "BZN",
+    "airport_name": "Bozeman, MT Airport"
+  },
+  {
+    "city_name": "Brainerd, MN",
+    "airport_code": "BRD",
+    "airport_name": "Brainerd, MN Airport"
+  },
+  {
+    "city_name": "Branson, MO",
+    "airport_code": "BKG",
+    "airport_name": "Branson, MO Airport"
+  },
+  {
+    "city_name": "Bristol/Johnson City/Kingsport, TN",
+    "airport_code": "TRI",
+    "airport_name": "Bristol/Johnson City/Kingsport, TN Airport"
+  },
+  {
+    "city_name": "Brownsville, TX",
+    "airport_code": "BRO",
+    "airport_name": "Brownsville, TX Airport"
+  },
+  {
+    "city_name": "Brunswick, GA",
+    "airport_code": "BQK",
+    "airport_name": "Brunswick, GA Airport"
+  },
+  {
+    "city_name": "Buffalo, NY",
+    "airport_code": "BUF",
+    "airport_name": "Buffalo Niagara International Airport"
+  },
+  {
+    "city_name": "Bullhead City, AZ",
+    "airport_code": "IFP",
+    "airport_name": "Bullhead City, AZ Airport"
+  },
+  {
+    "city_name": "Burbank, CA",
+    "airport_code": "BUR",
+    "airport_name": "Hollywood Burbank Airport"
+  },
+  {
+    "city_name": "Burlington, VT",
+    "airport_code": "BTV",
+    "airport_name": "Burlington, VT Airport"
+  },
+  {
+    "city_name": "Butte, MT",
+    "airport_code": "BTM",
+    "airport_name": "Butte, MT Airport"
+  },
+  {
+    "city_name": "Cape Girardeau, MO",
+    "airport_code": "CGI",
+    "airport_name": "Cape Girardeau, MO Airport"
+  },
+  {
+    "city_name": "Carlsbad, CA",
+    "airport_code": "CLD",
+    "airport_name": "Carlsbad, CA Airport"
+  },
+  {
+    "city_name": "Casper, WY",
+    "airport_code": "CPR",
+    "airport_name": "Casper, WY Airport"
+  },
+  {
+    "city_name": "Cedar City, UT",
+    "airport_code": "CDC",
+    "airport_name": "Cedar City, UT Airport"
+  },
+  {
+    "city_name": "Cedar Rapids/Iowa City, IA",
+    "airport_code": "CID",
+    "airport_name": "Cedar Rapids/Iowa City, IA Airport"
+  },
+  {
+    "city_name": "Champaign/Urbana, IL",
+    "airport_code": "CMI",
+    "airport_name": "Champaign/Urbana, IL Airport"
+  },
+  {
+    "city_name": "Charleston, SC",
+    "airport_code": "CHS",
+    "airport_name": "Charleston International Airport"
+  },
+  {
+    "city_name": "Charleston/Dunbar, WV",
+    "airport_code": "CRW",
+    "airport_name": "Charleston/Dunbar, WV Airport"
+  },
+  {
+    "city_name": "Charlotte Amalie, VI",
+    "airport_code": "STT",
+    "airport_name": "Charlotte Amalie, VI Airport"
+  },
+  {
+    "city_name": "Charlotte, NC",
+    "airport_code": "CLT",
+    "airport_name": "Charlotte Douglas International Airport"
+  },
+  {
+    "city_name": "Charlottesville, VA",
+    "airport_code": "CHO",
+    "airport_name": "Charlottesville, VA Airport"
+  },
+  {
+    "city_name": "Chattanooga, TN",
+    "airport_code": "CHA",
+    "airport_name": "Chattanooga, TN Airport"
+  },
+  {
+    "city_name": "Cheyenne, WY",
+    "airport_code": "CYS",
+    "airport_name": "Cheyenne, WY Airport"
+  },
+  {
+    "city_name": "Chicago, IL",
+    "airport_code": "ORD",
+    "airport_name": "O'Hare International Airport"
+  },
+  {
+    "city_name": "Chicago, IL",
+    "airport_code": "MDW",
+    "airport_name": "Chicago Midway International Airport"
+  },
+  {
+    "city_name": "Christiansted, VI",
+    "airport_code": "STX",
+    "airport_name": "Christiansted, VI Airport"
+  },
+  {
+    "city_name": "Cincinnati, OH",
+    "airport_code": "CVG",
+    "airport_name": "Cincinnati/Northern Kentucky International Airport"
+  },
+  {
+    "city_name": "Clarksburg/Fairmont, WV",
+    "airport_code": "CKB",
+    "airport_name": "Clarksburg/Fairmont, WV Airport"
+  },
+  {
+    "city_name": "Cleveland, OH",
+    "airport_code": "CLE",
+    "airport_name": "Cleveland Hopkins International Airport"
+  },
+  {
+    "city_name": "Cody, WY",
+    "airport_code": "COD",
+    "airport_name": "Cody, WY Airport"
+  },
+  {
+    "city_name": "College Station/Bryan, TX",
+    "airport_code": "CLL",
+    "airport_name": "College Station/Bryan, TX Airport"
+  },
+  {
+    "city_name": "Colorado Springs, CO",
+    "airport_code": "COS",
+    "airport_name": "Colorado Springs, CO Airport"
+  },
+  {
+    "city_name": "Columbia, MO",
+    "airport_code": "COU",
+    "airport_name": "Columbia, MO Airport"
+  },
+  {
+    "city_name": "Columbia, SC",
+    "airport_code": "CAE",
+    "airport_name": "Columbia, SC Airport"
+  },
+  {
+    "city_name": "Columbus, GA",
+    "airport_code": "CSG",
+    "airport_name": "Columbus, GA Airport"
+  },
+  {
+    "city_name": "Columbus, MS",
+    "airport_code": "GTR",
+    "airport_name": "Columbus, MS Airport"
+  },
+  {
+    "city_name": "Columbus, OH",
+    "airport_code": "LCK",
+    "airport_name": "Columbus, OH Airport"
+  },
+  {
+    "city_name": "Columbus, OH",
+    "airport_code": "CMH",
+    "airport_name": "John Glenn Columbus International Airport"
+  },
+  {
+    "city_name": "Concord, NC",
+    "airport_code": "USA",
+    "airport_name": "Concord, NC Airport"
+  },
+  {
+    "city_name": "Cordova, AK",
+    "airport_code": "CDV",
+    "airport_name": "Cordova, AK Airport"
+  },
+  {
+    "city_name": "Corpus Christi, TX",
+    "airport_code": "CRP",
+    "airport_name": "Corpus Christi, TX Airport"
+  },
+  {
+    "city_name": "Dallas, TX",
+    "airport_code": "DAL",
+    "airport_name": "Dallas Love Field"
+  },
+  {
+    "city_name": "Dallas/Fort Worth, TX",
+    "airport_code": "DFW",
+    "airport_name": "Dallas/Fort Worth International Airport"
+  },
+  {
+    "city_name": "Dayton, OH",
+    "airport_code": "DAY",
+    "airport_name": "Dayton, OH Airport"
+  },
+  {
+    "city_name": "Daytona Beach, FL",
+    "airport_code": "DAB",
+    "airport_name": "Daytona Beach, FL Airport"
+  },
+  {
+    "city_name": "Deadhorse, AK",
+    "airport_code": "SCC",
+    "airport_name": "Deadhorse, AK Airport"
+  },
+  {
+    "city_name": "Decatur, IL",
+    "airport_code": "DEC",
+    "airport_name": "Decatur, IL Airport"
+  },
+  {
+    "city_name": "Del Rio, TX",
+    "airport_code": "DRT",
+    "airport_name": "Del Rio, TX Airport"
+  },
+  {
+    "city_name": "Denver, CO",
+    "airport_code": "DEN",
+    "airport_name": "Denver International Airport"
+  },
+  {
+    "city_name": "Des Moines, IA",
+    "airport_code": "DSM",
+    "airport_name": "Des Moines, IA Airport"
+  },
+  {
+    "city_name": "Detroit, MI",
+    "airport_code": "DTW",
+    "airport_name": "Detroit Metropolitan Wayne County Airport"
+  },
+  {
+    "city_name": "Devils Lake, ND",
+    "airport_code": "DVL",
+    "airport_name": "Devils Lake, ND Airport"
+  },
+  {
+    "city_name": "Dickinson, ND",
+    "airport_code": "DIK",
+    "airport_name": "Dickinson, ND Airport"
+  },
+  {
+    "city_name": "Dillingham, AK",
+    "airport_code": "DLG",
+    "airport_name": "Dillingham, AK Airport"
+  },
+  {
+    "city_name": "Dodge City, KS",
+    "airport_code": "DDC",
+    "airport_name": "Dodge City, KS Airport"
+  },
+  {
+    "city_name": "Dothan, AL",
+    "airport_code": "DHN",
+    "airport_name": "Dothan, AL Airport"
+  },
+  {
+    "city_name": "Dubuque, IA",
+    "airport_code": "DBQ",
+    "airport_name": "Dubuque, IA Airport"
+  },
+  {
+    "city_name": "Duluth, MN",
+    "airport_code": "DLH",
+    "airport_name": "Duluth, MN Airport"
+  },
+  {
+    "city_name": "Durango, CO",
+    "airport_code": "DRO",
+    "airport_name": "Durango, CO Airport"
+  },
+  {
+    "city_name": "Eagle, CO",
+    "airport_code": "EGE",
+    "airport_name": "Eagle, CO Airport"
+  },
+  {
+    "city_name": "Eau Claire, WI",
+    "airport_code": "EAU",
+    "airport_name": "Eau Claire, WI Airport"
+  },
+  {
+    "city_name": "El Paso, TX",
+    "airport_code": "ELP",
+    "airport_name": "El Paso International Airport"
+  },
+  {
+    "city_name": "Elko, NV",
+    "airport_code": "EKO",
+    "airport_name": "Elko, NV Airport"
+  },
+  {
+    "city_name": "Elmira/Corning, NY",
+    "airport_code": "ELM",
+    "airport_name": "Elmira/Corning, NY Airport"
+  },
+  {
+    "city_name": "Erie, PA",
+    "airport_code": "ERI",
+    "airport_name": "Erie, PA Airport"
+  },
+  {
+    "city_name": "Escanaba, MI",
+    "airport_code": "ESC",
+    "airport_name": "Escanaba, MI Airport"
+  },
+  {
+    "city_name": "Eugene, OR",
+    "airport_code": "EUG",
+    "airport_name": "Eugene, OR Airport"
+  },
+  {
+    "city_name": "Evansville, IN",
+    "airport_code": "EVV",
+    "airport_name": "Evansville, IN Airport"
+  },
+  {
+    "city_name": "Everett, WA",
+    "airport_code": "PAE",
+    "airport_name": "Everett, WA Airport"
+  },
+  {
+    "city_name": "Fairbanks, AK",
+    "airport_code": "FAI",
+    "airport_name": "Fairbanks, AK Airport"
+  },
+  {
+    "city_name": "Fargo, ND",
+    "airport_code": "FAR",
+    "airport_name": "Fargo, ND Airport"
+  },
+  {
+    "city_name": "Farmington, NM",
+    "airport_code": "FMN",
+    "airport_name": "Farmington, NM Airport"
+  },
+  {
+    "city_name": "Fayetteville, AR",
+    "airport_code": "XNA",
+    "airport_name": "Fayetteville, AR Airport"
+  },
+  {
+    "city_name": "Fayetteville, NC",
+    "airport_code": "FAY",
+    "airport_name": "Fayetteville, NC Airport"
+  },
+  {
+    "city_name": "Flagstaff, AZ",
+    "airport_code": "FLG",
+    "airport_name": "Flagstaff, AZ Airport"
+  },
+  {
+    "city_name": "Flint, MI",
+    "airport_code": "FNT",
+    "airport_name": "Flint, MI Airport"
+  },
+  {
+    "city_name": "Florence, SC",
+    "airport_code": "FLO",
+    "airport_name": "Florence, SC Airport"
+  },
+  {
+    "city_name": "Fort Dodge, IA",
+    "airport_code": "FOD",
+    "airport_name": "Fort Dodge, IA Airport"
+  },
+  {
+    "city_name": "Fort Lauderdale, FL",
+    "airport_code": "FLL",
+    "airport_name": "Fort Lauderdale-Hollywood International Airport"
+  },
+  {
+    "city_name": "Fort Leonard Wood, MO",
+    "airport_code": "TBN",
+    "airport_name": "Fort Leonard Wood, MO Airport"
+  },
+  {
+    "city_name": "Fort Myers, FL",
+    "airport_code": "RSW",
+    "airport_name": "Southwest Florida International Airport"
+  },
+  {
+    "city_name": "Fort Smith, AR",
+    "airport_code": "FSM",
+    "airport_name": "Fort Smith, AR Airport"
+  },
+  {
+    "city_name": "Fort Wayne, IN",
+    "airport_code": "FWA",
+    "airport_name": "Fort Wayne, IN Airport"
+  },
+  {
+    "city_name": "Fresno, CA",
+    "airport_code": "FAT",
+    "airport_name": "Fresno, CA Airport"
+  },
+  {
+    "city_name": "Gainesville, FL",
+    "airport_code": "GNV",
+    "airport_name": "Gainesville, FL Airport"
+  },
+  {
+    "city_name": "Garden City, KS",
+    "airport_code": "GCK",
+    "airport_name": "Garden City, KS Airport"
+  },
+  {
+    "city_name": "Gillette, WY",
+    "airport_code": "GCC",
+    "airport_name": "Gillette, WY Airport"
+  },
+  {
+    "city_name": "Grand Forks, ND",
+    "airport_code": "GFK",
+    "airport_name": "Grand Forks, ND Airport"
+  },
+  {
+    "city_name": "Grand Island, NE",
+    "airport_code": "GRI",
+    "airport_name": "Grand Island, NE Airport"
+  },
+  {
+    "city_name": "Grand Junction, CO",
+    "airport_code": "GJT",
+    "airport_name": "Grand Junction, CO Airport"
+  },
+  {
+    "city_name": "Grand Rapids, MI",
+    "airport_code": "GRR",
+    "airport_name": "Grand Rapids, MI Airport"
+  },
+  {
+    "city_name": "Great Falls, MT",
+    "airport_code": "GTF",
+    "airport_name": "Great Falls, MT Airport"
+  },
+  {
+    "city_name": "Green Bay, WI",
+    "airport_code": "GRB",
+    "airport_name": "Green Bay, WI Airport"
+  },
+  {
+    "city_name": "Greensboro/High Point, NC",
+    "airport_code": "GSO",
+    "airport_name": "Greensboro/High Point, NC Airport"
+  },
+  {
+    "city_name": "Greenville, NC",
+    "airport_code": "PGV",
+    "airport_name": "Greenville, NC Airport"
+  },
+  {
+    "city_name": "Greer, SC",
+    "airport_code": "GSP",
+    "airport_name": "Greenville-Spartanburg International Airport"
+  },
+  {
+    "city_name": "Guam, TT",
+    "airport_code": "GUM",
+    "airport_name": "Guam, TT Airport"
+  },
+  {
+    "city_name": "Gulf Shores, AL",
+    "airport_code": "GUF",
+    "airport_name": "Gulf Shores, AL Airport"
+  },
+  {
+    "city_name": "Gulfport/Biloxi, MS",
+    "airport_code": "GPT",
+    "airport_name": "Gulfport/Biloxi, MS Airport"
+  },
+  {
+    "city_name": "Gunnison, CO",
+    "airport_code": "GUC",
+    "airport_name": "Gunnison, CO Airport"
+  },
+  {
+    "city_name": "Gustavus, AK",
+    "airport_code": "GST",
+    "airport_name": "Gustavus, AK Airport"
+  },
+  {
+    "city_name": "Hagerstown, MD",
+    "airport_code": "HGR",
+    "airport_name": "Hagerstown, MD Airport"
+  },
+  {
+    "city_name": "Hancock/Houghton, MI",
+    "airport_code": "CMX",
+    "airport_name": "Hancock/Houghton, MI Airport"
+  },
+  {
+    "city_name": "Harlingen/San Benito, TX",
+    "airport_code": "HRL",
+    "airport_name": "Harlingen/San Benito, TX Airport"
+  },
+  {
+    "city_name": "Harrisburg, PA",
+    "airport_code": "MDT",
+    "airport_name": "Harrisburg, PA Airport"
+  },
+  {
+    "city_name": "Hartford, CT",
+    "airport_code": "BDL",
+    "airport_name": "Bradley International Airport"
+  },
+  {
+    "city_name": "Hattiesburg/Laurel, MS",
+    "airport_code": "PIB",
+    "airport_name": "Hattiesburg/Laurel, MS Airport"
+  },
+  {
+    "city_name": "Hayden, CO",
+    "airport_code": "HDN",
+    "airport_name": "Hayden, CO Airport"
+  },
+  {
+    "city_name": "Hays, KS",
+    "airport_code": "HYS",
+    "airport_name": "Hays, KS Airport"
+  },
+  {
+    "city_name": "Helena, MT",
+    "airport_code": "HLN",
+    "airport_name": "Helena, MT Airport"
+  },
+  {
+    "city_name": "Hibbing, MN",
+    "airport_code": "HIB",
+    "airport_name": "Hibbing, MN Airport"
+  },
+  {
+    "city_name": "Hilo, HI",
+    "airport_code": "ITO",
+    "airport_name": "Hilo, HI Airport"
+  },
+  {
+    "city_name": "Hilton Head, SC",
+    "airport_code": "HHH",
+    "airport_name": "Hilton Head, SC Airport"
+  },
+  {
+    "city_name": "Hobbs, NM",
+    "airport_code": "HOB",
+    "airport_name": "Hobbs, NM Airport"
+  },
+  {
+    "city_name": "Honolulu, HI",
+    "airport_code": "HNL",
+    "airport_name": "Daniel K. Inouye International Airport"
+  },
+  {
+    "city_name": "Hoolehua, HI",
+    "airport_code": "MKK",
+    "airport_name": "Hoolehua, HI Airport"
+  },
+  {
+    "city_name": "Houston, TX",
+    "airport_code": "HOU",
+    "airport_name": "William P. Hobby Airport"
+  },
+  {
+    "city_name": "Houston, TX",
+    "airport_code": "IAH",
+    "airport_name": "George Bush Intercontinental Airport"
+  },
+  {
+    "city_name": "Huntsville, AL",
+    "airport_code": "HSV",
+    "airport_name": "Huntsville, AL Airport"
+  },
+  {
+    "city_name": "Hyannis, MA",
+    "airport_code": "HYA",
+    "airport_name": "Hyannis, MA Airport"
+  },
+  {
+    "city_name": "Idaho Falls, ID",
+    "airport_code": "IDA",
+    "airport_name": "Idaho Falls, ID Airport"
+  },
+  {
+    "city_name": "Indianapolis, IN",
+    "airport_code": "IND",
+    "airport_name": "Indianapolis International Airport"
+  },
+  {
+    "city_name": "International Falls, MN",
+    "airport_code": "INL",
+    "airport_name": "International Falls, MN Airport"
+  },
+  {
+    "city_name": "Iron Mountain/Kingsfd, MI",
+    "airport_code": "IMT",
+    "airport_name": "Iron Mountain/Kingsfd, MI Airport"
+  },
+  {
+    "city_name": "Islip, NY",
+    "airport_code": "ISP",
+    "airport_name": "Islip, NY Airport"
+  },
+  {
+    "city_name": "Ithaca/Cortland, NY",
+    "airport_code": "ITH",
+    "airport_name": "Ithaca/Cortland, NY Airport"
+  },
+  {
+    "city_name": "Jackson, WY",
+    "airport_code": "JAC",
+    "airport_name": "Jackson, WY Airport"
+  },
+  {
+    "city_name": "Jackson/Vicksburg, MS",
+    "airport_code": "JAN",
+    "airport_name": "Jackson/Vicksburg, MS Airport"
+  },
+  {
+    "city_name": "Jacksonville, FL",
+    "airport_code": "JAX",
+    "airport_name": "Jacksonville International Airport"
+  },
+  {
+    "city_name": "Jacksonville/Camp Lejeune, NC",
+    "airport_code": "OAJ",
+    "airport_name": "Jacksonville/Camp Lejeune, NC Airport"
+  },
+  {
+    "city_name": "Jamestown, ND",
+    "airport_code": "JMS",
+    "airport_name": "Jamestown, ND Airport"
+  },
+  {
+    "city_name": "Johnstown, PA",
+    "airport_code": "JST",
+    "airport_name": "Johnstown, PA Airport"
+  },
+  {
+    "city_name": "Joplin, MO",
+    "airport_code": "JLN",
+    "airport_name": "Joplin, MO Airport"
+  },
+  {
+    "city_name": "Juneau, AK",
+    "airport_code": "JNU",
+    "airport_name": "Juneau, AK Airport"
+  },
+  {
+    "city_name": "Kahului, HI",
+    "airport_code": "OGG",
+    "airport_name": "Kahului Airport"
+  },
+  {
+    "city_name": "Kalamazoo, MI",
+    "airport_code": "AZO",
+    "airport_name": "Kalamazoo, MI Airport"
+  },
+  {
+    "city_name": "Kalispell, MT",
+    "airport_code": "FCA",
+    "airport_name": "Kalispell, MT Airport"
+  },
+  {
+    "city_name": "Kansas City, MO",
+    "airport_code": "MCI",
+    "airport_name": "Kansas City International Airport"
+  },
+  {
+    "city_name": "Kapalua, HI",
+    "airport_code": "JHM",
+    "airport_name": "Kapalua, HI Airport"
+  },
+  {
+    "city_name": "Kearney, NE",
+    "airport_code": "EAR",
+    "airport_name": "Kearney, NE Airport"
+  },
+  {
+    "city_name": "Ketchikan, AK",
+    "airport_code": "KTN",
+    "airport_name": "Ketchikan, AK Airport"
+  },
+  {
+    "city_name": "Key West, FL",
+    "airport_code": "EYW",
+    "airport_name": "Key West, FL Airport"
+  },
+  {
+    "city_name": "Killeen, TX",
+    "airport_code": "GRK",
+    "airport_name": "Killeen, TX Airport"
+  },
+  {
+    "city_name": "King Salmon, AK",
+    "airport_code": "AKN",
+    "airport_name": "King Salmon, AK Airport"
+  },
+  {
+    "city_name": "Knoxville, TN",
+    "airport_code": "TYS",
+    "airport_name": "Knoxville, TN Airport"
+  },
+  {
+    "city_name": "Kodiak, AK",
+    "airport_code": "ADQ",
+    "airport_name": "Kodiak, AK Airport"
+  },
+  {
+    "city_name": "Kona, HI",
+    "airport_code": "KOA",
+    "airport_name": "Ellison Onizuka Kona International Airport"
+  },
+  {
+    "city_name": "Kotzebue, AK",
+    "airport_code": "OTZ",
+    "airport_name": "Kotzebue, AK Airport"
+  },
+  {
+    "city_name": "La Crosse, WI",
+    "airport_code": "LSE",
+    "airport_name": "La Crosse, WI Airport"
+  },
+  {
+    "city_name": "Lafayette, IN",
+    "airport_code": "LAF",
+    "airport_name": "Lafayette, IN Airport"
+  },
+  {
+    "city_name": "Lafayette, LA",
+    "airport_code": "LFT",
+    "airport_name": "Lafayette, LA Airport"
+  },
+  {
+    "city_name": "Lake Charles, LA",
+    "airport_code": "LCH",
+    "airport_name": "Lake Charles, LA Airport"
+  },
+  {
+    "city_name": "Lanai, HI",
+    "airport_code": "LNY",
+    "airport_name": "Lanai, HI Airport"
+  },
+  {
+    "city_name": "Lansing, MI",
+    "airport_code": "LAN",
+    "airport_name": "Lansing, MI Airport"
+  },
+  {
+    "city_name": "Laramie, WY",
+    "airport_code": "LAR",
+    "airport_name": "Laramie, WY Airport"
+  },
+  {
+    "city_name": "Laredo, TX",
+    "airport_code": "LRD",
+    "airport_name": "Laredo, TX Airport"
+  },
+  {
+    "city_name": "Las Vegas, NV",
+    "airport_code": "LAS",
+    "airport_name": "Harry Reid International Airport"
+  },
+  {
+    "city_name": "Latrobe, PA",
+    "airport_code": "LBE",
+    "airport_name": "Latrobe, PA Airport"
+  },
+  {
+    "city_name": "Lawton/Fort Sill, OK",
+    "airport_code": "LAW",
+    "airport_name": "Lawton/Fort Sill, OK Airport"
+  },
+  {
+    "city_name": "Lewisburg, WV",
+    "airport_code": "LWB",
+    "airport_name": "Lewisburg, WV Airport"
+  },
+  {
+    "city_name": "Lewiston, ID",
+    "airport_code": "LWS",
+    "airport_name": "Lewiston, ID Airport"
+  },
+  {
+    "city_name": "Lexington, KY",
+    "airport_code": "LEX",
+    "airport_name": "Lexington, KY Airport"
+  },
+  {
+    "city_name": "Liberal, KS",
+    "airport_code": "LBL",
+    "airport_name": "Liberal, KS Airport"
+  },
+  {
+    "city_name": "Lihue, HI",
+    "airport_code": "LIH",
+    "airport_name": "Lihue Airport"
+  },
+  {
+    "city_name": "Lincoln, NE",
+    "airport_code": "LNK",
+    "airport_name": "Lincoln, NE Airport"
+  },
+  {
+    "city_name": "Little Rock, AR",
+    "airport_code": "LIT",
+    "airport_name": "Bill and Hillary Clinton National Airport"
+  },
+  {
+    "city_name": "Long Beach, CA",
+    "airport_code": "LGB",
+    "airport_name": "Long Beach, CA Airport"
+  },
+  {
+    "city_name": "Longview, TX",
+    "airport_code": "GGG",
+    "airport_name": "Longview, TX Airport"
+  },
+  {
+    "city_name": "Los Angeles, CA",
+    "airport_code": "LAX",
+    "airport_name": "Los Angeles International Airport"
+  },
+  {
+    "city_name": "Louisville, KY",
+    "airport_code": "SDF",
+    "airport_name": "Louisville Muhammad Ali International Airport"
+  },
+  {
+    "city_name": "Lubbock, TX",
+    "airport_code": "LBB",
+    "airport_name": "Lubbock, TX Airport"
+  },
+  {
+    "city_name": "Lynchburg, VA",
+    "airport_code": "LYH",
+    "airport_name": "Lynchburg, VA Airport"
+  },
+  {
+    "city_name": "Madison, WI",
+    "airport_code": "MSN",
+    "airport_name": "Madison, WI Airport"
+  },
+  {
+    "city_name": "Mammoth Lakes, CA",
+    "airport_code": "MMH",
+    "airport_name": "Mammoth Lakes, CA Airport"
+  },
+  {
+    "city_name": "Manchester, NH",
+    "airport_code": "MHT",
+    "airport_name": "Manchester, NH Airport"
+  },
+  {
+    "city_name": "Manhattan/Ft. Riley, KS",
+    "airport_code": "MHK",
+    "airport_name": "Manhattan/Ft. Riley, KS Airport"
+  },
+  {
+    "city_name": "Marquette, MI",
+    "airport_code": "MQT",
+    "airport_name": "Marquette, MI Airport"
+  },
+  {
+    "city_name": "Martha's Vineyard, MA",
+    "airport_code": "MVY",
+    "airport_name": "Martha's Vineyard, MA Airport"
+  },
+  {
+    "city_name": "Mason City, IA",
+    "airport_code": "MCW",
+    "airport_name": "Mason City, IA Airport"
+  },
+  {
+    "city_name": "Medford, OR",
+    "airport_code": "MFR",
+    "airport_name": "Medford, OR Airport"
+  },
+  {
+    "city_name": "Melbourne, FL",
+    "airport_code": "MLB",
+    "airport_name": "Melbourne, FL Airport"
+  },
+  {
+    "city_name": "Memphis, TN",
+    "airport_code": "MEM",
+    "airport_name": "Memphis International Airport"
+  },
+  {
+    "city_name": "Meridian, MS",
+    "airport_code": "MEI",
+    "airport_name": "Meridian, MS Airport"
+  },
+  {
+    "city_name": "Miami, FL",
+    "airport_code": "MIA",
+    "airport_name": "Miami International Airport"
+  },
+  {
+    "city_name": "Midland/Odessa, TX",
+    "airport_code": "MAF",
+    "airport_name": "Midland/Odessa, TX Airport"
+  },
+  {
+    "city_name": "Milwaukee, WI",
+    "airport_code": "MKE",
+    "airport_name": "General Mitchell International Airport"
+  },
+  {
+    "city_name": "Minneapolis, MN",
+    "airport_code": "MSP",
+    "airport_name": "Minneapolis-Saint Paul International Airport"
+  },
+  {
+    "city_name": "Minot, ND",
+    "airport_code": "MOT",
+    "airport_name": "Minot, ND Airport"
+  },
+  {
+    "city_name": "Mission/McAllen/Edinburg, TX",
+    "airport_code": "MFE",
+    "airport_name": "Mission/McAllen/Edinburg, TX Airport"
+  },
+  {
+    "city_name": "Missoula, MT",
+    "airport_code": "MSO",
+    "airport_name": "Missoula, MT Airport"
+  },
+  {
+    "city_name": "Moab, UT",
+    "airport_code": "CNY",
+    "airport_name": "Moab, UT Airport"
+  },
+  {
+    "city_name": "Mobile, AL",
+    "airport_code": "BFM",
+    "airport_name": "Mobile, AL Airport"
+  },
+  {
+    "city_name": "Mobile, AL",
+    "airport_code": "MOB",
+    "airport_name": "Mobile, AL Airport"
+  },
+  {
+    "city_name": "Moline, IL",
+    "airport_code": "MLI",
+    "airport_name": "Moline, IL Airport"
+  },
+  {
+    "city_name": "Monroe, LA",
+    "airport_code": "MLU",
+    "airport_name": "Monroe, LA Airport"
+  },
+  {
+    "city_name": "Monterey, CA",
+    "airport_code": "MRY",
+    "airport_name": "Monterey, CA Airport"
+  },
+  {
+    "city_name": "Montgomery, AL",
+    "airport_code": "MGM",
+    "airport_name": "Montgomery, AL Airport"
+  },
+  {
+    "city_name": "Montrose/Delta, CO",
+    "airport_code": "MTJ",
+    "airport_name": "Montrose/Delta, CO Airport"
+  },
+  {
+    "city_name": "Morgantown, WV",
+    "airport_code": "MGW",
+    "airport_name": "Morgantown, WV Airport"
+  },
+  {
+    "city_name": "Mosinee, WI",
+    "airport_code": "CWA",
+    "airport_name": "Mosinee, WI Airport"
+  },
+  {
+    "city_name": "Muskegon, MI",
+    "airport_code": "MKG",
+    "airport_name": "Muskegon, MI Airport"
+  },
+  {
+    "city_name": "Myrtle Beach, SC",
+    "airport_code": "MYR",
+    "airport_name": "Myrtle Beach, SC Airport"
+  },
+  {
+    "city_name": "Nantucket, MA",
+    "airport_code": "ACK",
+    "airport_name": "Nantucket, MA Airport"
+  },
+  {
+    "city_name": "Nashville, TN",
+    "airport_code": "BNA",
+    "airport_name": "Nashville International Airport"
+  },
+  {
+    "city_name": "New Bern/Morehead/Beaufort, NC",
+    "airport_code": "EWN",
+    "airport_name": "New Bern/Morehead/Beaufort, NC Airport"
+  },
+  {
+    "city_name": "New Haven, CT",
+    "airport_code": "HVN",
+    "airport_name": "New Haven, CT Airport"
+  },
+  {
+    "city_name": "New Orleans, LA",
+    "airport_code": "MSY",
+    "airport_name": "Louis Armstrong New Orleans International Airport"
+  },
+  {
+    "city_name": "New York, NY",
+    "airport_code": "JFK",
+    "airport_name": "John F. Kennedy International Airport"
+  },
+  {
+    "city_name": "New York, NY",
+    "airport_code": "LGA",
+    "airport_name": "LaGuardia Airport"
+  },
+  {
+    "city_name": "Newark, NJ",
+    "airport_code": "EWR",
+    "airport_name": "Newark Liberty International Airport"
+  },
+  {
+    "city_name": "Newburgh/Poughkeepsie, NY",
+    "airport_code": "SWF",
+    "airport_name": "Newburgh/Poughkeepsie, NY Airport"
+  },
+  {
+    "city_name": "Newport News/Williamsburg, VA",
+    "airport_code": "PHF",
+    "airport_name": "Newport News/Williamsburg, VA Airport"
+  },
+  {
+    "city_name": "Niagara Falls, NY",
+    "airport_code": "IAG",
+    "airport_name": "Niagara Falls, NY Airport"
+  },
+  {
+    "city_name": "Nome, AK",
+    "airport_code": "OME",
+    "airport_name": "Nome, AK Airport"
+  },
+  {
+    "city_name": "Norfolk, VA",
+    "airport_code": "ORF",
+    "airport_name": "Norfolk International Airport"
+  },
+  {
+    "city_name": "North Bend/Coos Bay, OR",
+    "airport_code": "OTH",
+    "airport_name": "North Bend/Coos Bay, OR Airport"
+  },
+  {
+    "city_name": "North Platte, NE",
+    "airport_code": "LBF",
+    "airport_name": "North Platte, NE Airport"
+  },
+  {
+    "city_name": "Oakland, CA",
+    "airport_code": "OAK",
+    "airport_name": "Oakland International Airport"
+  },
+  {
+    "city_name": "Ogden, UT",
+    "airport_code": "OGD",
+    "airport_name": "Ogden, UT Airport"
+  },
+  {
+    "city_name": "Ogdensburg, NY",
+    "airport_code": "OGS",
+    "airport_name": "Ogdensburg, NY Airport"
+  },
+  {
+    "city_name": "Oklahoma City, OK",
+    "airport_code": "OKC",
+    "airport_name": "Will Rogers World Airport"
+  },
+  {
+    "city_name": "Omaha, NE",
+    "airport_code": "OMA",
+    "airport_name": "Eppley Airfield"
+  },
+  {
+    "city_name": "Ontario, CA",
+    "airport_code": "ONT",
+    "airport_name": "Ontario International Airport"
+  },
+  {
+    "city_name": "Orlando, FL",
+    "airport_code": "MCO",
+    "airport_name": "Orlando International Airport"
+  },
+  {
+    "city_name": "Owensboro, KY",
+    "airport_code": "OWB",
+    "airport_name": "Owensboro, KY Airport"
+  },
+  {
+    "city_name": "Paducah, KY",
+    "airport_code": "PAH",
+    "airport_name": "Paducah, KY Airport"
+  },
+  {
+    "city_name": "Pago Pago, TT",
+    "airport_code": "PPG",
+    "airport_name": "Pago Pago, TT Airport"
+  },
+  {
+    "city_name": "Palm Springs, CA",
+    "airport_code": "PSP",
+    "airport_name": "Palm Springs, CA Airport"
+  },
+  {
+    "city_name": "Panama City, FL",
+    "airport_code": "ECP",
+    "airport_name": "Panama City, FL Airport"
+  },
+  {
+    "city_name": "Pasco/Kennewick/Richland, WA",
+    "airport_code": "PSC",
+    "airport_name": "Pasco/Kennewick/Richland, WA Airport"
+  },
+  {
+    "city_name": "Pellston, MI",
+    "airport_code": "PLN",
+    "airport_name": "Pellston, MI Airport"
+  },
+  {
+    "city_name": "Pensacola, FL",
+    "airport_code": "PNS",
+    "airport_name": "Pensacola, FL Airport"
+  },
+  {
+    "city_name": "Peoria, IL",
+    "airport_code": "PIA",
+    "airport_name": "Peoria, IL Airport"
+  },
+  {
+    "city_name": "Petersburg, AK",
+    "airport_code": "PSG",
+    "airport_name": "Petersburg, AK Airport"
+  },
+  {
+    "city_name": "Philadelphia, PA",
+    "airport_code": "PHL",
+    "airport_name": "Philadelphia International Airport"
+  },
+  {
+    "city_name": "Phoenix, AZ",
+    "airport_code": "AZA",
+    "airport_name": "Phoenix, AZ Airport"
+  },
+  {
+    "city_name": "Phoenix, AZ",
+    "airport_code": "PHX",
+    "airport_name": "Phoenix Sky Harbor International Airport"
+  },
+  {
+    "city_name": "Pierre, SD",
+    "airport_code": "PIR",
+    "airport_name": "Pierre, SD Airport"
+  },
+  {
+    "city_name": "Pittsburgh, PA",
+    "airport_code": "PIT",
+    "airport_name": "Pittsburgh International Airport"
+  },
+  {
+    "city_name": "Plattsburgh, NY",
+    "airport_code": "PBG",
+    "airport_name": "Plattsburgh, NY Airport"
+  },
+  {
+    "city_name": "Pocatello, ID",
+    "airport_code": "PIH",
+    "airport_name": "Pocatello, ID Airport"
+  },
+  {
+    "city_name": "Ponce, PR",
+    "airport_code": "PSE",
+    "airport_name": "Ponce, PR Airport"
+  },
+  {
+    "city_name": "Portland, ME",
+    "airport_code": "PWM",
+    "airport_name": "Portland, ME Airport"
+  },
+  {
+    "city_name": "Portland, OR",
+    "airport_code": "PDX",
+    "airport_name": "Portland International Airport"
+  },
+  {
+    "city_name": "Portsmouth, NH",
+    "airport_code": "PSM",
+    "airport_name": "Portsmouth, NH Airport"
+  },
+  {
+    "city_name": "Prescott, AZ",
+    "airport_code": "PRC",
+    "airport_name": "Prescott, AZ Airport"
+  },
+  {
+    "city_name": "Presque Isle/Houlton, ME",
+    "airport_code": "PQI",
+    "airport_name": "Presque Isle/Houlton, ME Airport"
+  },
+  {
+    "city_name": "Providence, RI",
+    "airport_code": "PVD",
+    "airport_name": "T.F. Green International Airport"
+  },
+  {
+    "city_name": "Provo, UT",
+    "airport_code": "PVU",
+    "airport_name": "Provo, UT Airport"
+  },
+  {
+    "city_name": "Pueblo, CO",
+    "airport_code": "PUB",
+    "airport_name": "Pueblo, CO Airport"
+  },
+  {
+    "city_name": "Pullman, WA",
+    "airport_code": "PUW",
+    "airport_name": "Pullman, WA Airport"
+  },
+  {
+    "city_name": "Punta Gorda, FL",
+    "airport_code": "PGD",
+    "airport_name": "Punta Gorda, FL Airport"
+  },
+  {
+    "city_name": "Quincy, IL",
+    "airport_code": "UIN",
+    "airport_name": "Quincy, IL Airport"
+  },
+  {
+    "city_name": "Raleigh/Durham, NC",
+    "airport_code": "RDU",
+    "airport_name": "Raleigh-Durham International Airport"
+  },
+  {
+    "city_name": "Rapid City, SD",
+    "airport_code": "RAP",
+    "airport_name": "Rapid City, SD Airport"
+  },
+  {
+    "city_name": "Redding, CA",
+    "airport_code": "RDD",
+    "airport_name": "Redding, CA Airport"
+  },
+  {
+    "city_name": "Reno, NV",
+    "airport_code": "RNO",
+    "airport_name": "Reno-Tahoe International Airport"
+  },
+  {
+    "city_name": "Rhinelander, WI",
+    "airport_code": "RHI",
+    "airport_name": "Rhinelander, WI Airport"
+  },
+  {
+    "city_name": "Richmond, VA",
+    "airport_code": "RIC",
+    "airport_name": "Richmond International Airport"
+  },
+  {
+    "city_name": "Riverton/Lander, WY",
+    "airport_code": "RIW",
+    "airport_name": "Riverton/Lander, WY Airport"
+  },
+  {
+    "city_name": "Roanoke, VA",
+    "airport_code": "ROA",
+    "airport_name": "Roanoke, VA Airport"
+  },
+  {
+    "city_name": "Rochester, MN",
+    "airport_code": "RST",
+    "airport_name": "Rochester, MN Airport"
+  },
+  {
+    "city_name": "Rochester, NY",
+    "airport_code": "ROC",
+    "airport_name": "Rochester, NY Airport"
+  },
+  {
+    "city_name": "Rock Springs, WY",
+    "airport_code": "RKS",
+    "airport_name": "Rock Springs, WY Airport"
+  },
+  {
+    "city_name": "Rockford, IL",
+    "airport_code": "RFD",
+    "airport_name": "Rockford, IL Airport"
+  },
+  {
+    "city_name": "Roswell, NM",
+    "airport_code": "ROW",
+    "airport_name": "Roswell, NM Airport"
+  },
+  {
+    "city_name": "Rota, TT",
+    "airport_code": "ROP",
+    "airport_name": "Rota, TT Airport"
+  },
+  {
+    "city_name": "Sacramento, CA",
+    "airport_code": "SMF",
+    "airport_name": "Sacramento International Airport"
+  },
+  {
+    "city_name": "Saginaw/Bay City/Midland, MI",
+    "airport_code": "MBS",
+    "airport_name": "Saginaw/Bay City/Midland, MI Airport"
+  },
+  {
+    "city_name": "Saipan, TT",
+    "airport_code": "SPN",
+    "airport_name": "Saipan, TT Airport"
+  },
+  {
+    "city_name": "Salina, KS",
+    "airport_code": "SLN",
+    "airport_name": "Salina, KS Airport"
+  },
+  {
+    "city_name": "Salisbury, MD",
+    "airport_code": "SBY",
+    "airport_name": "Salisbury, MD Airport"
+  },
+  {
+    "city_name": "Salt Lake City, UT",
+    "airport_code": "SLC",
+    "airport_name": "Salt Lake City International Airport"
+  },
+  {
+    "city_name": "San Angelo, TX",
+    "airport_code": "SJT",
+    "airport_name": "San Angelo, TX Airport"
+  },
+  {
+    "city_name": "San Antonio, TX",
+    "airport_code": "SAT",
+    "airport_name": "San Antonio International Airport"
+  },
+  {
+    "city_name": "San Diego, CA",
+    "airport_code": "SAN",
+    "airport_name": "San Diego International Airport"
+  },
+  {
+    "city_name": "San Francisco, CA",
+    "airport_code": "SFO",
+    "airport_name": "San Francisco International Airport"
+  },
+  {
+    "city_name": "San Jose, CA",
+    "airport_code": "SJC",
+    "airport_name": "San Jose Mineta International Airport"
+  },
+  {
+    "city_name": "San Juan, PR",
+    "airport_code": "SJU",
+    "airport_name": "Luis Muñoz Marín International Airport"
+  },
+  {
+    "city_name": "San Luis Obispo, CA",
+    "airport_code": "SBP",
+    "airport_name": "San Luis Obispo, CA Airport"
+  },
+  {
+    "city_name": "Sanford, FL",
+    "airport_code": "SFB",
+    "airport_name": "Sanford, FL Airport"
+  },
+  {
+    "city_name": "Santa Ana, CA",
+    "airport_code": "SNA",
+    "airport_name": "John Wayne Airport"
+  },
+  {
+    "city_name": "Santa Barbara, CA",
+    "airport_code": "SBA",
+    "airport_name": "Santa Barbara, CA Airport"
+  },
+  {
+    "city_name": "Santa Fe, NM",
+    "airport_code": "SAF",
+    "airport_name": "Santa Fe, NM Airport"
+  },
+  {
+    "city_name": "Santa Maria, CA",
+    "airport_code": "SMX",
+    "airport_name": "Santa Maria, CA Airport"
+  },
+  {
+    "city_name": "Santa Rosa, CA",
+    "airport_code": "STS",
+    "airport_name": "Santa Rosa, CA Airport"
+  },
+  {
+    "city_name": "Sarasota/Bradenton, FL",
+    "airport_code": "SRQ",
+    "airport_name": "Sarasota/Bradenton, FL Airport"
+  },
+  {
+    "city_name": "Sault Ste. Marie, MI",
+    "airport_code": "CIU",
+    "airport_name": "Sault Ste. Marie, MI Airport"
+  },
+  {
+    "city_name": "Savannah, GA",
+    "airport_code": "SAV",
+    "airport_name": "Savannah, GA Airport"
+  },
+  {
+    "city_name": "Scottsbluff, NE",
+    "airport_code": "BFF",
+    "airport_name": "Scottsbluff, NE Airport"
+  },
+  {
+    "city_name": "Scranton/Wilkes-Barre, PA",
+    "airport_code": "AVP",
+    "airport_name": "Scranton/Wilkes-Barre, PA Airport"
+  },
+  {
+    "city_name": "Seattle, WA",
+    "airport_code": "SEA",
+    "airport_name": "Seattle-Tacoma International Airport"
+  },
+  {
+    "city_name": "Sheridan, WY",
+    "airport_code": "SHR",
+    "airport_name": "Sheridan, WY Airport"
+  },
+  {
+    "city_name": "Shreveport, LA",
+    "airport_code": "SHV",
+    "airport_name": "Shreveport, LA Airport"
+  },
+  {
+    "city_name": "Sioux City, IA",
+    "airport_code": "SUX",
+    "airport_name": "Sioux City, IA Airport"
+  },
+  {
+    "city_name": "Sioux Falls, SD",
+    "airport_code": "FSD",
+    "airport_name": "Sioux Falls, SD Airport"
+  },
+  {
+    "city_name": "Sitka, AK",
+    "airport_code": "SIT",
+    "airport_name": "Sitka, AK Airport"
+  },
+  {
+    "city_name": "South Bend, IN",
+    "airport_code": "SBN",
+    "airport_name": "South Bend, IN Airport"
+  },
+  {
+    "city_name": "Spokane, WA",
+    "airport_code": "GEG",
+    "airport_name": "Spokane International Airport"
+  },
+  {
+    "city_name": "Springfield, IL",
+    "airport_code": "SPI",
+    "airport_name": "Springfield, IL Airport"
+  },
+  {
+    "city_name": "Springfield, MO",
+    "airport_code": "SGF",
+    "airport_name": "Springfield, MO Airport"
+  },
+  {
+    "city_name": "St. Cloud, MN",
+    "airport_code": "STC",
+    "airport_name": "St. Cloud, MN Airport"
+  },
+  {
+    "city_name": "St. George, UT",
+    "airport_code": "SGU",
+    "airport_name": "St. George, UT Airport"
+  },
+  {
+    "city_name": "St. Louis, MO",
+    "airport_code": "STL",
+    "airport_name": "St. Louis Lambert International Airport"
+  },
+  {
+    "city_name": "St. Petersburg, FL",
+    "airport_code": "PIE",
+    "airport_name": "St. Petersburg, FL Airport"
+  },
+  {
+    "city_name": "State College, PA",
+    "airport_code": "SCE",
+    "airport_name": "State College, PA Airport"
+  },
+  {
+    "city_name": "Staunton, VA",
+    "airport_code": "SHD",
+    "airport_name": "Staunton, VA Airport"
+  },
+  {
+    "city_name": "Stillwater, OK",
+    "airport_code": "SWO",
+    "airport_name": "Stillwater, OK Airport"
+  },
+  {
+    "city_name": "Stockton, CA",
+    "airport_code": "SCK",
+    "airport_name": "Stockton, CA Airport"
+  },
+  {
+    "city_name": "Sun Valley/Hailey/Ketchum, ID",
+    "airport_code": "SUN",
+    "airport_name": "Sun Valley/Hailey/Ketchum, ID Airport"
+  },
+  {
+    "city_name": "Syracuse, NY",
+    "airport_code": "SYR",
+    "airport_name": "Syracuse, NY Airport"
+  },
+  {
+    "city_name": "Tallahassee, FL",
+    "airport_code": "TLH",
+    "airport_name": "Tallahassee, FL Airport"
+  },
+  {
+    "city_name": "Tampa, FL",
+    "airport_code": "TPA",
+    "airport_name": "Tampa International Airport"
+  },
+  {
+    "city_name": "Texarkana, AR",
+    "airport_code": "TXK",
+    "airport_name": "Texarkana, AR Airport"
+  },
+  {
+    "city_name": "Toledo, OH",
+    "airport_code": "TOL",
+    "airport_name": "Toledo, OH Airport"
+  },
+  {
+    "city_name": "Traverse City, MI",
+    "airport_code": "TVC",
+    "airport_name": "Traverse City, MI Airport"
+  },
+  {
+    "city_name": "Trenton, NJ",
+    "airport_code": "TTN",
+    "airport_name": "Trenton, NJ Airport"
+  },
+  {
+    "city_name": "Tucson, AZ",
+    "airport_code": "TUS",
+    "airport_name": "Tucson International Airport"
+  },
+  {
+    "city_name": "Tulsa, OK",
+    "airport_code": "TUL",
+    "airport_name": "Tulsa International Airport"
+  },
+  {
+    "city_name": "Twin Falls, ID",
+    "airport_code": "TWF",
+    "airport_name": "Twin Falls, ID Airport"
+  },
+  {
+    "city_name": "Tyler, TX",
+    "airport_code": "TYR",
+    "airport_name": "Tyler, TX Airport"
+  },
+  {
+    "city_name": "Unalaska, AK",
+    "airport_code": "DUT",
+    "airport_name": "Unalaska, AK Airport"
+  },
+  {
+    "city_name": "Valdosta, GA",
+    "airport_code": "VLD",
+    "airport_name": "Valdosta, GA Airport"
+  },
+  {
+    "city_name": "Valparaiso, FL",
+    "airport_code": "VPS",
+    "airport_name": "Valparaiso, FL Airport"
+  },
+  {
+    "city_name": "Vernal, UT",
+    "airport_code": "VEL",
+    "airport_name": "Vernal, UT Airport"
+  },
+  {
+    "city_name": "Victoria, TX",
+    "airport_code": "VCT",
+    "airport_name": "Victoria, TX Airport"
+  },
+  {
+    "city_name": "Waco, TX",
+    "airport_code": "ACT",
+    "airport_name": "Waco, TX Airport"
+  },
+  {
+    "city_name": "Walla Walla, WA",
+    "airport_code": "ALW",
+    "airport_name": "Walla Walla, WA Airport"
+  },
+  {
+    "city_name": "Washington, DC",
+    "airport_code": "DCA",
+    "airport_name": "Ronald Reagan Washington National Airport"
+  },
+  {
+    "city_name": "Washington, DC",
+    "airport_code": "IAD",
+    "airport_name": "Washington Dulles International Airport"
+  },
+  {
+    "city_name": "Waterloo, IA",
+    "airport_code": "ALO",
+    "airport_name": "Waterloo, IA Airport"
+  },
+  {
+    "city_name": "Watertown, NY",
+    "airport_code": "ART",
+    "airport_name": "Watertown, NY Airport"
+  },
+  {
+    "city_name": "Watertown, SD",
+    "airport_code": "ATY",
+    "airport_name": "Watertown, SD Airport"
+  },
+  {
+    "city_name": "Wenatchee, WA",
+    "airport_code": "EAT",
+    "airport_name": "Wenatchee, WA Airport"
+  },
+  {
+    "city_name": "West Palm Beach/Palm Beach, FL",
+    "airport_code": "PBI",
+    "airport_name": "Palm Beach International Airport"
+  },
+  {
+    "city_name": "West Yellowstone, MT",
+    "airport_code": "WYS",
+    "airport_name": "West Yellowstone, MT Airport"
+  },
+  {
+    "city_name": "White Plains, NY",
+    "airport_code": "HPN",
+    "airport_name": "White Plains, NY Airport"
+  },
+  {
+    "city_name": "Wichita Falls, TX",
+    "airport_code": "SPS",
+    "airport_name": "Wichita Falls, TX Airport"
+  },
+  {
+    "city_name": "Wichita, KS",
+    "airport_code": "ICT",
+    "airport_name": "Wichita Dwight D. Eisenhower National Airport"
+  },
+  {
+    "city_name": "Williamsport, PA",
+    "airport_code": "IPT",
+    "airport_name": "Williamsport, PA Airport"
+  },
+  {
+    "city_name": "Williston, ND",
+    "airport_code": "ISN",
+    "airport_name": "Williston, ND Airport"
+  },
+  {
+    "city_name": "Williston, ND",
+    "airport_code": "XWA",
+    "airport_name": "Williston, ND Airport"
+  },
+  {
+    "city_name": "Wilmington, NC",
+    "airport_code": "ILM",
+    "airport_name": "Wilmington, NC Airport"
+  },
+  {
+    "city_name": "Worcester, MA",
+    "airport_code": "ORH",
+    "airport_name": "Worcester Regional Airport"
+  },
+  {
+    "city_name": "Wrangell, AK",
+    "airport_code": "WRG",
+    "airport_name": "Wrangell, AK Airport"
+  },
+  {
+    "city_name": "Yakima, WA",
+    "airport_code": "YKM",
+    "airport_name": "Yakima, WA Airport"
+  },
+  {
+    "city_name": "Yakutat, AK",
+    "airport_code": "YAK",
+    "airport_name": "Yakutat, AK Airport"
+  },
+  {
+    "city_name": "Yuma, AZ",
+    "airport_code": "YUM",
+    "airport_name": "Yuma, AZ Airport"
+  }
 ]
