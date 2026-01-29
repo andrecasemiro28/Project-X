@@ -1,0 +1,153 @@
+FLIGHT RISK AI - PERSONA PROFILES
+================================================================================
+Documentation of the 10 Traveler Archetypes used in the Logic Engine.
+
+================================================================================
+1. THE EXECUTIVE
+================================================================================
+User Label:      🏢 Executive / Business Pro
+Voice Sample:    "I have a board meeting at 2 PM. I don't care about the cost, just get me there."
+Tipping Point:   Delay > 30 mins (Schedule disruption)
+Tone:            Direct, authoritative, efficiency-focused.
+Coping Style:    Productivity Protection. Find the nearest Lounge. Get on Wi-Fi immediately.
+Flight Strategy: Double-book. Buy a refundable seat on a competitor leaving 1 hour later.
+
+[INSURANCE ARCHETYPE: Corporate Shield Elite]
+Focus:       Time Assurance
+Payout:      100% Instant Refund + $1,000 Incidental Coverage.
+Fine Print:  Auto-payout triggered by 30 min delay.
+
+================================================================================
+2. THE STUDENT
+================================================================================
+User Label:      🎒 Student / Young Traveler
+Voice Sample:    "I have like $20 left for food. Can I sleep in the terminal?"
+Tipping Point:   Delay > 12 hours (Requires hotel)
+Tone:            Casual, frugal, resourceful. Use slang.
+Coping Style:    Survival Mode. Locate sleeping spots. Fill water bottles. Download movies.
+Flight Strategy: Sit tight. Never cancel unless the airline pays you to do it.
+
+[INSURANCE ARCHETYPE: Backpacker Delay-Pay]
+Focus:       Food & Hostel Cover
+Payout:      $50 instant cash for meals/hostels.
+Fine Print:  $50 deductible. Receipts required.
+
+================================================================================
+3. THE PARENT
+================================================================================
+User Label:      🧸 Family / Parent
+Voice Sample:    "I have two toddlers and we are running out of diapers. I cannot do a 4-hour layover."
+Tipping Point:   Delay > 60 mins (Kids getting restless)
+Tone:            Empathetic, practical, reassuring. "We got this".
+Coping Style:    Chaos Containment. Find the 'Family Bathroom' and empty gates to run kids around.
+Flight Strategy: Book a day-rate hotel room immediately if delay > 2 hours. Don't power through.
+
+[INSURANCE ARCHETYPE: Family Harmony Flex]
+Focus:       Sanity Protection
+Payout:      Reimburses airport hotel, diapers, and DoorDash.
+Fine Print:  Covers whole family. No receipts for food under $50.
+
+================================================================================
+4. THE RETIREE
+================================================================================
+User Label:      👴 Retiree / Senior Traveler
+Voice Sample:    "My knees can't handle sitting on these hard chairs for three hours."
+Tipping Point:   Delay > 2 hours (Physical discomfort)
+Tone:            Respectful, patient, clear. No jargon.
+Coping Style:    Comfort First. Request wheelchair assistance for priority seating. Find a quiet corner.
+Flight Strategy: Call the travel agent. Avoid rebooking on apps. Prioritize comfort over speed.
+
+[INSURANCE ARCHETYPE: Silver Comfort Guard]
+Focus:       Health & Comfort
+Payout:      Lounge access included + Medical evacuation if needed.
+Fine Print:  24/7 Phone Concierge support included.
+
+================================================================================
+5. THE TOURIST
+================================================================================
+User Label:      📸 Tourist / Vacationer
+Voice Sample:    "We're going to miss our dinner reservation in Rome! This is supposed to be fun."
+Tipping Point:   Delay > 4 hours (Losing vacation time)
+Tone:            Upbeat, adventurous, helpful.
+Coping Style:    Experience Salvage. Research airport attractions or nearby city excursions.
+Flight Strategy: Check if the airline will re-route you through a different fun city.
+
+[INSURANCE ARCHETYPE: Vacation Saver]
+Focus:       Experience Protection
+Payout:      Reimburses missed tours and pre-paid hotels.
+Fine Print:  Covers non-refundable bookings.
+
+================================================================================
+6. THE DIGITAL NOMAD
+================================================================================
+User Label:      💻 Digital Nomad / Remote Worker
+Voice Sample:    "I need stable upload speed. I have a Zoom call with a client in 45 minutes."
+Tipping Point:   Delay > 0 mins (If Wi-Fi is bad)
+Tone:            Tech-savvy, efficient, focused on 'Connectivity'.
+Coping Style:    Tech Hunt. Find the gate with the best power outlets and 5G signal.
+Flight Strategy: Don't board if you can't work. Rebook for a plane with verified Wi-Fi.
+
+[INSURANCE ARCHETYPE: Remote Work Shield]
+Focus:       Tech & Connection
+Payout:      Pays for airport lounge Wi-Fi and lost billable hours.
+Fine Print:  Requires proof of freelance work.
+
+================================================================================
+7. THE EXPLORER
+================================================================================
+User Label:      🧗 Adventure / Explorer
+Voice Sample:    "It's all part of the journey. I can sleep on the floor if I have to."
+Tipping Point:   Delay > 24 hours (Missing the expedition)
+Tone:            Chill, stoic, adventurous.
+Coping Style:    Go with the Flow. Talk to locals. Read a book. Don't stress.
+Flight Strategy: Look for weird alternate routes (trains/buses).
+
+[INSURANCE ARCHETYPE: Explorer Hazard Pay]
+Focus:       Gear & Activity
+Payout:      Covers lost hiking gear and missed connection transport.
+Fine Print:  High deductible. Geared for remote travel.
+
+================================================================================
+8. THE VIP
+================================================================================
+User Label:      💎 VIP / Luxury Traveler
+Voice Sample:    "This is unacceptable. Get me the concierge line. I don't wait in lines."
+Tipping Point:   Delay > 15 mins (Inconvenience)
+Tone:            Polite but demanding, sophisticated, 'White Glove'.
+Coping Style:    Total Outsourcing. Call the Amex Centurion concierge. Have them fix it.
+Flight Strategy: Private Transfer. If commercial fails, look for a jet charter or first-class swap.
+
+[INSURANCE ARCHETYPE: Black Card Infinite]
+Focus:       Exclusivity
+Payout:      Private transfer to destination. No limits.
+Fine Print:  Invitation only. $5000 premium.
+
+================================================================================
+9. THE IMMIGRANT
+================================================================================
+User Label:      🌍 Immigrant / Expat
+Voice Sample:    "I have 3 checked bags with gifts for my family. I cannot lose them."
+Tipping Point:   Delay > 2 hours (Risk of baggage loss)
+Tone:            Serious, protective, detail-oriented.
+Coping Style:    Asset Protection. Stand near the gate desk to ensure luggage is tracked.
+Flight Strategy: Do not change airlines unless absolutely necessary (baggage nightmare).
+
+[INSURANCE ARCHETYPE: Global Roots Cover]
+Focus:       Baggage & Visa
+Payout:      $2000 per lost bag. Visa expiration protection.
+Fine Print:  High baggage limits. Covers documentation fees.
+
+================================================================================
+10. THE COMMUTER
+================================================================================
+User Label:      🚆 Commuter / Short-Haul
+Voice Sample:    "I just want to get home for dinner. I do this flight every Tuesday."
+Tipping Point:   Delay > 90 mins (Misses dinner)
+Tone:            Brisk, experienced, 'Done this a million times'.
+Coping Style:    Routine Optimization. You know the airport shortcuts. Go to your usual spot.
+Flight Strategy: Rent a car. If it's short-haul, driving is often faster than a 2-hour delay.
+
+[INSURANCE ARCHETYPE: Commuter Express]
+Focus:       On-Time Guarantee
+Payout:      Free rental car if flight delayed > 2 hours.
+Fine Print:  Valid only for flights under 500 miles.
