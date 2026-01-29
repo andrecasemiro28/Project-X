@@ -390,8 +390,17 @@ def get_solution_prompt(persona_key, risk_data, quote_price, user_question, opp_
     Do not use standard AI intros like "Here is an analysis." Jump straight into character.
 
     **Section 1: The Strategic Move**
-    Give advice based on this strategy: "{p_data['flight_strategy']}".
-    *Reference the ${opp_cost:.0f} cost explicitly to sound smart.*
+    First, look at the Flight Risk Level and Financial Pain:
+
+    - If Flight Risk is LOW (probability < 25%) OR Financial Pain < $100:
+      - Say clearly that there is no need for aggressive moves.
+      - Recommend staying on the current flight and maybe light back-up checks only (e.g. monitor status, know alternative options).
+    - If Flight Risk is MODERATE (25–60%) AND Financial Pain is between $100 and $500:
+      - Suggest cautious optimizations (earlier arrival to airport, checking same-airline alternatives), but avoid expensive changes.
+    - If Flight Risk is HIGH (>= 60%) OR Financial Pain >= $500:
+      - You may recommend your default strategy: "{p_data['flight_strategy']}" (e.g., double-booking) and explain why it’s justified.
+
+    Always reference the ${opp_cost:.0f} cost explicitly to justify whether a move is worth it or not.
 
     **Section 2: Survival Tactics**
     Give tips based on this vibe: "{p_data['coping_style']}".
@@ -688,24 +697,39 @@ if origin and dest:
             # Step 1: Analyze schedule patterns
             raw_prob, display_prob, is_morning, avg_delay_mins = predict_flight_risk(origin, dest, travel_date, flight_time)
 
-            # --- REFINED DECISION LOGIC (WYSIWYG) ---
-            risk_class = "LOW"
-            color = "#28a745" # Green
-            reason = "Normal schedule risk. On-time arrival likely."
+            # Qualitative traffic profile for explanation (today vs. typical)
+            if avg_delay_mins <= 10:
+                traffic_profile = "well below typical congestion for this route."
+            elif avg_delay_mins <= 25:
+                traffic_profile = "around normal congestion levels for this route."
+            else:
+                traffic_profile = "historically one of the more delay-prone routes."
 
+            # --- REFINED DECISION LOGIC (WYSIWYG) ---
             if display_prob >= 0.60:
                 risk_class = "HIGH"
-                color = "#dc3545" # Red
-                reason = "High probability of delay due to route congestion history."
+                color = "#dc3545"  # Red
+                reason = f"High probability of delay due to route congestion history. Historically, this route is {traffic_profile}"
             elif display_prob >= 0.30:
                 risk_class = "MODERATE"
-                color = "#ffc107" # Yellow/Orange
-                reason = "Elevated risk. Minor delays (15-30 mins) are possible."
+                color = "#ffc107"  # Yellow/Orange
+                reason = f"Elevated risk. Minor delays (15-30 mins) are possible. Historically, this route is {traffic_profile}"
+            else:
+                risk_class = "LOW"
+                color = "#28a745"  # Green
+                reason = f"Normal schedule risk. On-time arrival likely. Historically, this route is {traffic_profile}"
 
-            if is_morning and risk_class == "LOW":
-                risk_class = "MODERATE (Morning)"
-                color = "#ffc107"
-                reason = "⚠️ Traffic is clear, but morning flights carry unpredictable 'Cold Start' mechanical risks."
+            # Morning 'cold start' note: only soften messaging, do NOT upgrade risk class
+            morning_cold_start_note = None
+            if is_morning and display_prob >= 0.25:
+                morning_cold_start_note = (
+                    "🌅 Morning Flight: traffic is clear, but early departures sometimes face 'cold start' mechanical checks. "
+                    "Overall risk is still relatively low for this route."
+                )
+            elif is_morning:
+                morning_cold_start_note = (
+                    "🌅 Morning Flight: historically quite reliable at this time. Cold start risk is minimal today."
+                )
 
             st.session_state.result = {
                 "prob": display_prob,
@@ -714,7 +738,8 @@ if origin and dest:
                 "color": color,
                 "reason": reason,
                 "is_morning": is_morning,
-                "avg_delay": avg_delay_mins
+                "avg_delay": avg_delay_mins,
+                "morning_note": morning_cold_start_note,
             }
 
             # Calculate & Store Opportunity Cost
@@ -775,7 +800,9 @@ if st.session_state.result:
     with c2:
         st.subheader("📊 Route Stats")
         st.write(f"**Typical Delay:** {res['avg_delay']:.0f} mins (Historical Avg)")
-        if res['is_morning']:
+        if res.get("morning_note"):
+            st.info(res["morning_note"])
+        elif res['is_morning']:
             st.info("🌅 Morning Flight: 'Cold Start' risk logic applied.")
         else:
             st.success("☀️ Day/Evening Flight: Standard traffic logic applied.")
